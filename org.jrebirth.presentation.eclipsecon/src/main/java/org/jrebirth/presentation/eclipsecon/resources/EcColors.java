@@ -34,8 +34,21 @@ import org.jrebirth.core.resource.color.WebColor;
  */
 public enum EcColors implements ColorItem {
 
-    /** The slide title. */
-    SLIDE_TITLE(new WebColor("0088D3", 1.0));
+    /** Color for slide title, white. */
+    SLIDE_TITLE(new WebColor("3CBFBB", 1.0)), //
+
+    /** Color for slide title, white. */
+    SLIDE_TITLE_GLOW(new WebColor("0BF4ED", 0.7)),
+
+    RECTANGLE_1(new WebColor("D9CC21")),
+    RECTANGLE_2(new WebColor("F7741C")),
+    RECTANGLE_3(new WebColor("C29D68")),
+    RECTANGLE_4(new WebColor("665E4C")),
+    RECTANGLE_5(new WebColor("7E8F83")),
+    RECTANGLE_6(new WebColor("9FD9DF")),
+    RECTANGLE_7(new WebColor("0BF4ED")),
+
+    ;
 
     /**
      * Private Constructor.

@@ -49,7 +49,7 @@ public final class PlaceView extends AbstractSlideView<PlaceModel, Pane, PlaceCo
      * {@inheritDoc}
      */
     @Override
-    protected void customInitializeComponents() {
+    protected void initView() {
 
         final ImageView toulouse = ImageViewBuilder.create()
                 .image(loadImage("images/PlaceLogo.jpg"))
@@ -62,27 +62,4 @@ public final class PlaceView extends AbstractSlideView<PlaceModel, Pane, PlaceCo
         getRootNode().getStyleClass().add(getModel().getSlide().getStyle());
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void doStart() {
-        // Nothing to do yet
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void doReload() {
-        // Nothing to do yet
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void doHide() {
-        // Nothing to do yet
-    }
 }

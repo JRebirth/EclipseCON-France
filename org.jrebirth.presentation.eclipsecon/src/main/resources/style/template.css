@@ -7,7 +7,7 @@
 
 #SlideStack{
 	
-	-fx-background-image : url("../images/background.jpg");
+	-fx-background-image : url("../splash/Splash_Screen.png");
 	-fx-background-color: transparent;
     -fx-background-position: center center;
     -fx-background-size : stretch;
@@ -19,6 +19,25 @@
 	-fx-font : 100px "mizike";
 	-fx-fill: #CCCCCC;
 }
+
+
+
+
+#BasicSlide{
+	 -fx-background-color: linear-gradient(to bottom, #c7b299 0%,#d9cbba 18%,#ede6de 40%,#f8f5f2 54%,#ffffff 67%,#fdfcfb 73%,#f2ede7 82%,#e0d5c7 91%,#c7b29a 100%);
+}
+
+.content {
+	/*-fx-background-color: rgba(242,242,242,1.0);
+	-fx-background-radius: 2px;*/
+	-fx-padding : 20px 50px 20px 50px;
+	
+	-fx-background-color: linear-gradient(to bottom, #ffffff 0%, rgb(250, 250, 250) 79%, #736357 97%); 
+	-fx-background-radius: 0 2px 0 0;
+	
+	-fx-effect: dropshadow( gaussian , rgba(140,111,72, 0.95) , 8 , 0.3 , 0 , 5 );
+}
+
 
 .header{
 	
@@ -39,14 +58,6 @@
 	-fx-background-repeat: no-repeat;*/
 }
 
-.content {
-	/*-fx-background-color: rgba(242,242,242,1.0);
-	-fx-background-radius: 2px;*/
-	-fx-padding : 20px 50px 20px 50px;
-	
-	-fx-background-color: rgba(242,242,242,1.0);
-	-fx-background-radius: 0 2px 0 0;
-}
 
 /*.classicContainer {
 	
@@ -64,34 +75,27 @@ VBox.content {
 .item0 {
 	
 	-fx-font : 4em "Neuton Cursive";
-	-fx-fill : #004442;
+	-fx-fill : #F7741C;
 }
 
 .item1 {
-
 	-fx-font : 2.4em "Neuton Cursive";
-	-fx-fill : #169E99;
-	-fx-padding-left : 40px;
-	-fx-translate-x : 40 ;
+	-fx-fill : #665E4C;
 }
 
 .item2 {
 
 	-fx-font : 2.4em "Neuton Cursive";
-	-fx-fill : #169E99;
-	-fx-padding-left : 80px;
-	-fx-translate-x : 80;
+	-fx-fill : #C29D68;
 }
  
 .link0 {
-	
 	-fx-font : 2.4em "Neuton Cursive";
 	-fx-fill : #004442;
 }
 .link1 {
-	
 	-fx-font : 2em "Neuton Cursive";
-	-fx-fill : #004442;
+	-fx-fill : #665E4C;
 }
 
 /**
@@ -108,7 +112,7 @@ VBox.content {
  * Me Slide
  */
 VBox.me{
-	-fx-background-position: 700px 20px, 300px 300px;	
+	-fx-background-position: 600px 20px, 600px 270px;	
 	-fx-background-repeat: no-repeat, no-repeat, no-repeat;
 	-fx-background-image : url("../images/me/seb.jpg"), url("../images/me/JRebirth_128x128.png");
 }
@@ -117,24 +121,30 @@ VBox.me{
 /** 			SPLASHES             **/
 /**************************************/
 
-.splashContainer {
-	-fx-background-color: transparent;
+.partX .introTitle {
+	-fx-font : 80px "White Rabbit";
+	-fx-fill: #CCCCCC;
+}
+.partX{
+	-fx-background-image : url("../images/splash/Splash_Screen.png");
+	-fx-background-position: center center;
+	-fx-background-repeat : no-repeat;
+}
+
+.splashContainer, .intro {
+	/*-fx-background-color: transparent;
     -fx-background-position: right bottom;	
+   	*/
+   	-fx-background-image : url("../images/splash/Splash_Screen.png");
+	-fx-background-position: center center;
+	-fx-background-repeat : no-repeat;
 }
 
 .splashText{
 	-fx-fill : #CCCCCC; /*#A0DCFF ;*/
 	-fx-text-alignment : center;
-	-fx-font: 100px  "Turtles";
+	-fx-font: 65px  "Gorgonzolla";
 	/* -fx-padding : 10px;*/
-}
-
-/** Do You see */
-.doyousee{
-	-fx-background-color:#FFFFFF;
-	-fx-background-image : url("../images/splash/Hands_up.jpg");
-	-fx-background-position: center bottom;
-	-fx-background-repeat : no-repeat;
 }
 
 .dogfooding .introTitle {
@@ -145,14 +155,6 @@ VBox.me{
 /** DogFooding */
 .dogfooding {
 	-fx-background-image : url("../images/splash/Dog_Fooding.jpg");
-	-fx-background-position: center center;
-	-fx-background-repeat : no-repeat;
-}
-
-
-/** kiosk */
-.kiosk {
-	-fx-background-image : url("../images/splash/javafx_kiosk.jpg");
 	-fx-background-position: center center;
 	-fx-background-repeat : no-repeat;
 }

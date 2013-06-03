@@ -15,42 +15,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jrebirth.presentation.eclipsecon.resources;
+package org.jrebirth.presentation.eclipsecon.ui.slides.property;
 
-import org.jrebirth.core.resource.font.FontName;
+import org.jrebirth.presentation.ui.base.SlideStep;
 
+// TODO: Auto-generated Javadoc
 /**
- * The class <strong>EcFontsLoader</strong>.
+ * The class <strong>PropertySlideStep</strong>.
  * 
  * @author Sébastien Bordes
  */
-public enum EcFontsLoader implements FontName {
+public enum PropertySlideStep implements SlideStep {
+
+    /** The Text. */
+    Text,
+    /** . */
+    JavaBean,
+    /** . */
+    JavaProperty,
 
     /** . */
-    Neuropol,
+    Wordle,
 
     /** . */
-    DINk,
+    XXXProperty,
 
     /** . */
-    Report_1942,
-
-    /** The Essays1743. */
-    Essays1743,
-
-    /** The Harabara. */
-    Harabara,
-
-    /** The mizike. */
-    MIZIKE,
-
-    /** The whiterabbit. */
-    whiterabbit,
-
-    /** The Gorgonzolla. */
-    Gorgonzolla,
+    Binding,
 
     /** . */
-    Neuton_Cursive;
+    // Doclet
+    ;
 
 }

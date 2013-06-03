@@ -15,42 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jrebirth.presentation.eclipsecon.resources;
+package org.jrebirth.presentation.eclipsecon.ui.slides.property;
 
-import org.jrebirth.core.resource.font.FontName;
-
+// TODO: Auto-generated Javadoc
 /**
- * The class <strong>EcFontsLoader</strong>.
- * 
- * @author Sébastien Bordes
+ * The Class JavaBean.
  */
-public enum EcFontsLoader implements FontName {
+public class JavaBean {
 
-    /** . */
-    Neuropol,
+    /** The bean integer value. */
+    private int value;
 
-    /** . */
-    DINk,
+    /**
+     * Sets the value.
+     * 
+     * @param value The value to set.
+     */
+    public final void setValue(final int value) {
+        this.value = value;
+    }
 
-    /** . */
-    Report_1942,
-
-    /** The Essays1743. */
-    Essays1743,
-
-    /** The Harabara. */
-    Harabara,
-
-    /** The mizike. */
-    MIZIKE,
-
-    /** The whiterabbit. */
-    whiterabbit,
-
-    /** The Gorgonzolla. */
-    Gorgonzolla,
-
-    /** . */
-    Neuton_Cursive;
-
+    /**
+     * Gets the value.
+     * 
+     * @return Returns the value.
+     */
+    public final int getValue() {
+        return this.value;
+    }
 }

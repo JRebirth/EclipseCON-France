@@ -41,7 +41,10 @@ public enum EcFonts implements FontItem {
     TYPEWRITER(new RealFont(EcFontsLoader.MIZIKE, 72)),
 
     /** The slide title font. */
-    SLIDE_TITLE(new RealFont(EcFontsLoader.Harabara, 45)),
+    SLIDE_TITLE(new RealFont(EcFontsLoader.Neuropol, 48)), //
+
+    /** The slide title font. */
+    SLIDE_SUB_TITLE(new RealFont(EcFontsLoader.Neuropol, 24)), //
 
     /** The slide item. */
     SLIDE_ITEM(new RealFont(EcFontsLoader.Neuton_Cursive, 10)),
@@ -50,7 +53,7 @@ public enum EcFonts implements FontItem {
     DOG_SPLASH(new RealFont(EcFontsLoader.whiterabbit, 20)),
 
     /** The wazaa splash. */
-    WAZAA_SPLASH(new RealFont(EcFontsLoader.Turtles, 20)),
+    WAZAA_SPLASH(new RealFont(EcFontsLoader.Gorgonzolla, 20)),
 
     /** The prez title. */
     PREZ_TITLE(new RealFont(EcFontsLoader.Harabara, 26));

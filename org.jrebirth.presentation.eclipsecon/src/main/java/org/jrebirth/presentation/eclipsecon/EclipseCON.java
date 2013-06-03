@@ -60,6 +60,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
      * {@inheritDoc}
      */
     // @Override
+    @Override
     public Class<? extends Model> getFirstModelClass() {
         return StackModel.class;
     }
@@ -69,7 +70,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
      */
     @Override
     protected String getApplicationTitle() {
-        return "JavaFX 2.2 - What's up ?";
+        return "Let's Code a JavaFX Application with Eclipse";
     }
 
     /**
@@ -88,12 +89,13 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
     @Override
     protected void customizeScene(final Scene scene) {
 
-        scene.getStylesheets().add("style/template.css");
+        addCSS(scene, "style/template.css");
 
         // Manage F11 button to switch full screen
         scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
 
             // @Override
+            @Override
             public void handle(final KeyEvent event) {
                 if (event.isControlDown()) {
                     if (event.getCode() == KeyCode.ADD || event.getCode() == KeyCode.PLUS) {
@@ -136,6 +138,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
      * {@inheritDoc}
      */
     // @Override
+    @Override
     public List<Wave> getPreBootWaveList() {
         return Collections.emptyList();
     }
@@ -144,6 +147,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
      * {@inheritDoc}
      */
     // @Override
+    @Override
     public List<Wave> getPostBootWaveList() {
         return Collections.emptyList();
     }
