@@ -1,0 +1,81 @@
+/********************************************************************/
+/** 				Splash View. 									*/
+/********************************************************************/
+
+#SplashPanel{
+	-fx-background-image: url("../image/Splash_Background.png");
+	-fx-background-position: center;
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat ;
+}
+
+
+/********************************************************************/
+/** 					Page View.									*/
+/********************************************************************/
+
+#PagePanel {
+	
+}
+
+
+/********************************************************************/
+/** 					Game Menu View.								*/
+/********************************************************************/
+
+#GameMenuPanel{
+	-fx-background-color: transparent;
+	-fx-background-image: url("../image/menu/Menu_Background.png");
+	-fx-background-position: center;
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat ;
+}
+
+
+/********************************************************************/
+/** 						Game View 								*/
+/********************************************************************/
+
+
+
+/********************************************************************/
+/** 				Expression View.								*/
+/********************************************************************/
+
+
+
+
+/********************************************************************/
+/** 					Result View.								*/
+/********************************************************************/
+
+#ResultPanel{
+	-fx-background-image: url("../image/Result_Background.png");
+	-fx-background-position: center;
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat ;
+}
+
+#ResultRatioLabel{
+	-fx-font-family: "nyala";
+	-fx-font-size: 140px;
+	-fx-text-fill: #f7f5f5;
+}
+
+#ResultTimeLabel{
+	-fx-font-family: "nyala";
+	-fx-font-size: 130px;
+	-fx-text-fill: #f7f5f5;
+}
+
+#ResultSuccessLabel{
+	-fx-font-family: "nyala";
+	-fx-font-size: 110px;
+	-fx-text-fill: #f7f5f5;
+}
+
+#ResultFailureLabel{
+	-fx-font-family: "nyala";
+	-fx-font-size: 80px;
+	-fx-text-fill: #f7f5f5;
+}
