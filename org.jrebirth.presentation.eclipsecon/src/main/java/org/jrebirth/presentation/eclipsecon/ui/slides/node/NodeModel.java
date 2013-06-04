@@ -15,34 +15,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jrebirth.presentation.eclipsecon.ui.slides.basic;
+package org.jrebirth.presentation.eclipsecon.ui.slides.node;
 
-import javafx.scene.layout.Pane;
+import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseModel;
 
-import org.jrebirth.core.exception.CoreException;
-import org.jrebirth.core.ui.annotation.RootNodeId;
-import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
-
+// TODO: Auto-generated Javadoc
 /**
- * 
- * The class <strong>AbstractTemplateView</strong>.
- * 
- * The view used to display a standard template slide.
+ * The class <strong>NodeModel</strong>.
  * 
  * @author Sébastien Bordes
  */
-@RootNodeId("BasicSlide")
-public class BasicView extends AbstractBaseView<BasicModel, Pane, BasicController> {
+public final class NodeModel extends AbstractBaseModel<NodeModel, NodeView, NodeSlideStep> {
 
     /**
-     * Default Constructor.
-     * 
-     * @param model the controls view model
-     * 
-     * @throws CoreException if build fails
+     * {@inheritDoc}
      */
-    public BasicView(final BasicModel model) throws CoreException {
-        super(model);
+    @Override
+    protected NodeSlideStep[] initializeSlideStep() {
+        return NodeSlideStep.values();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void showSlideStep(final NodeSlideStep slideStep) {
+        switch (slideStep) {
+            case Bounds1:
+                getView().showBounds1();
+                break;
+            default:
+                getView().showSlideStep(slideStep);
+        }
+
     }
 
 }

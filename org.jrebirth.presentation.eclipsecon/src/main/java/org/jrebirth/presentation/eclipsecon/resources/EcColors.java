@@ -48,6 +48,24 @@ public enum EcColors implements ColorItem {
     RECTANGLE_6(new WebColor("9FD9DF")),
     RECTANGLE_7(new WebColor("0BF4ED")),
 
+    /** The shape blue. */
+    SHAPE_BLUE(new WebColor("3495CE", 1.0)),
+
+    /** The drop shadow. */
+    DROP_SHADOW(new WebColor("000000", 0.8)),
+
+    /** The inner shadow. */
+    INNER_SHADOW(new WebColor("FFFFFF", 0.3)),
+
+    /** The GRADIEN t_1. */
+    GRADIENT_1(new WebColor("1AA2AC", 1.0)),
+
+    /** The GRADIEN t_2. */
+    GRADIENT_2(new WebColor("F04F24", 1.0)),
+
+    /** The GRADIEN t_3. */
+    GRADIENT_3(new WebColor("FFF200", 1.0))
+
     ;
 
     /**

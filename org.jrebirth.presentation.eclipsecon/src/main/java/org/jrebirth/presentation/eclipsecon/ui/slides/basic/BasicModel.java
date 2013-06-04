@@ -17,16 +17,15 @@
  */
 package org.jrebirth.presentation.eclipsecon.ui.slides.basic;
 
-import org.jrebirth.presentation.ui.base.AbstractSlideModel;
+import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseModel;
 import org.jrebirth.presentation.ui.base.SlideStep;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>BasicModel</strong>.
  * 
  * @author Sébastien Bordes
  */
-public class BasicModel extends AbstractSlideModel<BasicModel, BasicView, SlideStep> {
+public class BasicModel extends AbstractBaseModel<BasicModel, BasicView, SlideStep> {
 
     /**
      * {@inheritDoc}
@@ -42,23 +41,6 @@ public class BasicModel extends AbstractSlideModel<BasicModel, BasicView, SlideS
     @Override
     public void showSlideStep(final SlideStep slideStep) {
 
-    }
-
-    /**
-     * Return the title string from the slide object.
-     * 
-     * @return the slide title
-     */
-    protected String getTitle() {
-        return getSlide().getTitle();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String toString() {
-        return getSlideNumber() + "/" + getStepPosition() + " " + getTitle() + this.getClass().getSimpleName();
     }
 
 }

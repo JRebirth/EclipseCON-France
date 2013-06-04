@@ -15,36 +15,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jrebirth.presentation.eclipsecon.ui.slides.base;
+package org.jrebirth.presentation.eclipsecon.ui.slides.handler;
 
-import org.jrebirth.presentation.ui.base.AbstractSlideModel;
-import org.jrebirth.presentation.ui.base.SlideStep;
+import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseModel;
 
 /**
- * The class <strong>BasicModel</strong>.
+ * The class <strong>HandlerModel</strong>.
  * 
- * @param <M> the generic type
- * @param <V> the value type
- * @param <S> the generic type
  * @author Sébastien Bordes
  */
-public abstract class AbstractBaseModel<M extends AbstractBaseModel<M, V, S>, V extends AbstractBaseView<?, ?, ?>, S extends SlideStep> extends AbstractSlideModel<M, V, S> {
+public final class HandlerModel extends AbstractBaseModel<HandlerModel, HandlerView, HandlerSlideStep> {
 
     /**
-     * Return the title string from the slide object.
-     * 
-     * @return the slide title
+     * {@inheritDoc}
      */
-    protected String getTitle() {
-        return getSlide().getTitle();
+    @Override
+    protected HandlerSlideStep[] initializeSlideStep() {
+        return HandlerSlideStep.values();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public String toString() {
-        return getSlideNumber() + "/" + getStepPosition() + " " + getTitle() + this.getClass().getSimpleName();
-    }
+    public void showSlideStep(final HandlerSlideStep slideStep) {
 
+        switch (slideStep) {
+
+            case Text:
+                getView().showText();
+                break;
+            case HandlerStage:
+                getView().showHandlerStage();
+                break;
+            default:
+                getView().showSlideStep(slideStep);
+        }
+    }
 }

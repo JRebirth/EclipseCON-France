@@ -40,4 +40,8 @@ public interface EcImages {
     ImageItem PAGE_1_PETAL = create(new LocalImage("images/base/Page_1_Petal.png"));
     ImageItem PAGE_SPARK = create(new LocalImage("images/base/Page_Spark.png"));
     ImageItem PAGE_RAYS = create(new LocalImage("images/base/Page_Rays.png"));
+
+    ImageItem CUSTOM_CAR = create(new LocalImage("images/slides/fx/Custom_Car.jpg"));
+    ImageItem TEXTURE = create(new LocalImage("images/slides/fx/fabric_texture_car.jpg"));
+
 }

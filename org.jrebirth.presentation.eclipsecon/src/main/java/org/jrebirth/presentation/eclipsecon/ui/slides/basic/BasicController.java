@@ -18,15 +18,14 @@
 package org.jrebirth.presentation.eclipsecon.ui.slides.basic;
 
 import org.jrebirth.core.exception.CoreException;
-import org.jrebirth.presentation.ui.base.AbstractSlideController;
+import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseController;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>AbstractTemplateController</strong>.
  * 
  * @author Sébastien Bordes
  */
-public class BasicController extends AbstractSlideController<BasicModel, BasicView> {
+public class BasicController extends AbstractBaseController<BasicModel, BasicView> {
 
     /**
      * Default Constructor.

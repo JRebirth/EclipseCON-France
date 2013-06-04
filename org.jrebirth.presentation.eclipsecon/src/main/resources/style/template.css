@@ -28,14 +28,16 @@
 }
 
 .content {
-	/*-fx-background-color: rgba(242,242,242,1.0);
-	-fx-background-radius: 2px;*/
 	-fx-padding : 20px 50px 20px 50px;
 	
-	-fx-background-color: linear-gradient(to bottom, #ffffff 0%, rgb(250, 250, 250) 79%, #736357 97%); 
-	-fx-background-radius: 0 2px 0 0;
+	/*-fx-background-color: linear-gradient(to bottom, #ffffff 0%, rgb(250, 250, 250) 79%, #736357 97%); 
+	-fx-background-radius: 0 2px 0 0;*/
 	
-	-fx-effect: dropshadow( gaussian , rgba(140,111,72, 0.95) , 8 , 0.3 , 0 , 5 );
+	-fx-background-image : url("../images/base/Background_Content.png");
+	-fx-background-position: stretch;
+	-fx-background-repeat : repeat-x  ;
+	
+	-fx-effect: dropshadow( gaussian , rgba(140,111,72, 0.95) , 10 , 0.5 , 0 , 0 );
 }
 
 

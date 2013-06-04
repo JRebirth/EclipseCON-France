@@ -28,17 +28,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.LabelBuilder;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SliderBuilder;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.FlowPaneBuilder;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.StackPaneBuilder;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.CircleBuilder;
 
 import org.jrebirth.core.exception.CoreException;
+import org.jrebirth.presentation.eclipsecon.resources.EcColors;
 import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
 
 /**
@@ -49,7 +49,7 @@ import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
  * 
  * @author Sébastien Bordes
  */
-public final class PropertyView extends AbstractBaseView<PropertyModel, AnchorPane, PropertyController> {
+public final class PropertyView extends AbstractBaseView<PropertyModel, Pane, PropertyController> {
 
     /**
      * Default Constructor.
@@ -78,7 +78,7 @@ public final class PropertyView extends AbstractBaseView<PropertyModel, AnchorPa
         final VBox vb = buildDefaultContent(getModel().getContent(PropertySlideStep.Binding));
 
         final NumberFormat nf = new DecimalFormat("0.0");
-        final Circle c = CircleBuilder.create().fill(Color.BLUE).radius(50).build();
+        final Circle c = CircleBuilder.create().fill(EcColors.SHAPE_BLUE.get()).radius(50).build();
         final Slider s = SliderBuilder.create().min(0.1).max(5).value(1.0).majorTickUnit(1.0).maxWidth(200).build();
         final Label l = LabelBuilder.create().text("1.0").build();
 

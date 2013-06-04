@@ -12,8 +12,6 @@
 
 	<slides defaultModelClass="org.jrebirth.presentation.eclipsecon.ui.slides.basic.BasicModel">
 
-
-
 		<!-- EclipseCON France 2013 Toulouse -->
 		<slide style="place" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.place.PlaceModel" showAnimation="FadeIn" hideAnimation="FadeOut">
 		</slide>
@@ -27,6 +25,7 @@
 		<slide style="me" showAnimation="MoveFromLeft" hideAnimation="MoveToRight">
 			<title>Sébastien Bordes</title>
 			<content>
+				<title>JavaFX enthusiast</title>
 				<item>JRebirth Guru</item>
 				<item></item>
 				<item>@s8bordes</item>
@@ -149,28 +148,21 @@
 			<title>Let's try SceneBuilder</title>
 		</slide>
 
-		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>JRebirth</title>
-			<content>
-				<title>Application Framework</title>
-				<item>WCS - MVC Pattern</item>
-				<item image="images/slides/jrebirth/JRebirth.png" />
-				<item level="1">currently used with presentation module</item>
-			</content>
-		</slide>
 
 		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Let's create\na mind game ?</title>
+			<title>Let's create\na 'Smart' game ?</title>
 		</slide>
 
 		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
 			<title>Mastering Tables</title>
 			<content>
+				<title>'Smart' Game</title>
+				<item level="1">Target</item>
+				<item>Kids under 10 years</item>
+				<item></item>
 				<item level="1">Main Goal</item>
 				<item>Help kids to learn their Math tables</item>
 				<item>Be fun !</item>
-				<item level="1">Target</item>
-				<item>Kids under 10 years</item>
 				<item></item>
 				<item level="1">Next Goal</item>
 				<item>Provide Statistics</item>
@@ -186,15 +178,53 @@
 			</content>
 		</slide>
 
-		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 1: \n\n    Java Builder</title>
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
+			<title>Play It!</title>
 		</slide>
-		
-				<slide>
+
+		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
+			<title>Developer</title>
+			<content>
+				<title>point of view</title>
+
+				<item>JavaFX Toolkit</item>
+				<item level="1">Standalone and Applet (JWS)</item>
+				<item></item>
+				<item>JRebirth Key features</item>
+				<item level="1">RIA Pattern providing perfect SoC</item>
+				<item level="1">Simplify Multithreaded Development</item>
+				<item level="1">Built according to KISS principle</item>
+				<item level="1">Lightweight (lower than 70kb with Pack200)</item>
+				<item level="1">Free &amp; Open Source Library</item>
+
+			</content>
+		</slide>
+
+		<slide showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>JRebirth</title>
+			<content>
+				<title>Application Framework</title>
+				<item>WCS - MVC Pattern</item>
+				<item image="images/slides/jrebirth/JRebirth.png" />
+				<item level="1">currently used with presentation module</item>
+			</content>
+		</slide>
+
+
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 1 ******************************************** -->
+		<!-- ********************************************************************************************* -->
+
+		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
+			<title>Part 1: \n\n Java Builder</title>
+		</slide>
+
+		<slide>
 			<title>Java Builders</title>
 			<content>
 				<item>More concise (with a good formatter)</item>
-				<item>Replace constructor with  N parameters</item>
+				<item>Replace constructor with N parameters</item>
 				<item>Reusable generic builder</item>
 				<item>Extensible by inheritance</item>
 				<item html="true">
@@ -230,38 +260,658 @@
 			</content>
 		</slide>
 
-		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 2: \n\n    The Stage,\n     the Scene\n      and Nodes</title>
-		</slide>
-		
-		
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 2 ******************************************** -->
+		<!-- ********************************************************************************************* -->
 
 		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 3: \n\n    Properties\n    And\n    Bindings</title>
+			<title>Part 2: \n\n The Stage,\n the Scene\n and Nodes</title>
 		</slide>
-		
-		
-		
+
+		<!-- Node -->
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.node.NodeModel" style="nodeContent" showAnimation="MoveFromLeft" hideAnimation="MoveToRight">
+			<title>Graphical Tree</title>
+	
+			<content>
+				<item>Stage, Scene and Root Node</item>
+				<item>Any visual component is a node</item>
+				<item image="images/uml/node.png" />
+				<item>Parent (Branches)</item>
+				<item>Shape (Leaves)</item>
+				<item>ImageView</item>
+				<item>MediaView</item>
+				<item>Canvas (since 2.2)</item>
+			</content>
+
+			<content name="Stateful">
+				<title>Stateful</title>
+
+				<item>ID</item>
+				<item level="1">lookup(String cssSelector)</item>
+				<item>Bounds</item>
+				<item level="1">boundsInLocal, boundsInParent, layoutBounds</item>
+				<item level="1">x, y => Top, Left</item>
+
+				<item>Transformations</item>
+				<item level="1">Translate</item>
+				<item level="1">Scale</item>
+				<item level="1">Rotate</item>
+			</content>
+
+			<content name="Extra">
+				<title>Extra</title>
+				<item>Style (classes and properties)</item>
+				<item>Opacity and Visibility</item>
+				<item>Focus => requestFocus()</item>
+				<item>User events managements</item>
+				<item>Coordinate conversion</item>
+			</content>
+		</slide>
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 3 ******************************************** -->
+		<!-- ********************************************************************************************* -->
 
 		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 4: \n\n    Styling</title>
+			<title>Part 3: \n\n Properties\n And\n Bindings</title>
 		</slide>
+
+		<!-- Properties -->
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.property.PropertyModel">
+			<title>Observable And Binding</title>
+			<content>
+				<title>Collection</title>
+				<item>Listen Collections update</item>
+				<item level="1">ObservableList</item>
+				<item level="1">ObservableMap</item>
+				<item></item>
+				<item level="1">FXCollections.observableArrayList()</item>
+				<item level="1">FXCollections.observableHashMap()</item>
+			</content>
+
+			<content name="JavaBean">
+				<title>Java Beans</title>
+				<item>Getter &amp; Setter (Encapsulation)</item>
+				<item html="true">
+			<![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">JavaBean&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**&nbsp;The&nbsp;bean&nbsp;integer&nbsp;value.&nbsp;*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">value;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">value&nbsp;The&nbsp;value&nbsp;to&nbsp;set.</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setValue</font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">value</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>this</b></font><font color="#000000">.value&nbsp;=&nbsp;value;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Returns&nbsp;the&nbsp;value.</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">getValue</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">value;</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+			]]>
+
+				</item>
+			</content>
+
+			<content name="JavaProperty">
+				<title>Properties</title>
+				<item>Java Beans ++</item>
+				<item html="true">
+		<![CDATA[
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">javafx.beans.property.IntegerProperty;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">javafx.beans.property.SimpleIntegerProperty;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">JavaProperty&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**&nbsp;The&nbsp;integer&nbsp;property.&nbsp;*/</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">IntegerProperty&nbsp;intProperty&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">SimpleIntegerProperty</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Returns&nbsp;the&nbsp;value.</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>double&nbsp;</b></font><font color="#000000">getValue</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">intProperty.get</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">16</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">value&nbsp;The&nbsp;value&nbsp;to&nbsp;set.</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setValue</font><font color="#000000">(</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">value</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">intProperty.set</font><font color="#000000">(</font><font color="#000000">value</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">23</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">the&nbsp;integer&nbsp;property.</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">IntegerProperty&nbsp;intProperty</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">intProperty;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">30</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+		]]>
+				</item>
+
+			</content>
+
+			<content name="Wordle">
+				<title>Extensible</title>
+				<item image="images/slides/properties/Properties.png" />
+			</content>
+
+			<content name="XXXProperty">
+				<title>JavaFX Properties</title>
+				<item>Primitives Type</item>
+				<item level="1">Boolean, Double, Float, Integer, Long, String</item>
+				<item>Extendable</item>
+				<item level="1">ObjectProperty&lt;T&gt;</item>
+				<item>ReadOnly or Wrapper version</item>
+				<item>Operator usage (add,divide ....)</item>
+				<item>ChangeListener &amp; InvalidationListener</item>
+			</content>
+
+			<content name="Binding">
+				<title>Binding</title>
+				<item>Unidirectionnal or Bidirectionnal</item>
+				<item html="true">
+		<![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">NumberFormat&nbsp;nf&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">DecimalFormat</font><font color="#000000">(</font><font color="#2a00ff">&#34;0.0&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Circle&nbsp;c&nbsp;=&nbsp;CircleBuilder.create</font><font color="#000000">()</font><font color="#000000">.fill</font><font color="#000000">(</font><font color="#000000">Color.AQUA</font><font color="#000000">)</font><font color="#000000">.radius</font><font color="#000000">(</font><font color="#990000">50</font><font color="#000000">)</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Slider&nbsp;s&nbsp;=&nbsp;SliderBuilder.create</font><font color="#000000">()</font><font color="#000000">.min</font><font color="#000000">(</font><font color="#990000">0.1</font><font color="#000000">)</font><font color="#000000">.max</font><font color="#000000">(</font><font color="#990000">5</font><font color="#000000">)</font><font color="#000000">.value</font><font color="#000000">(</font><font color="#990000">1.0</font><font color="#000000">)</font><font color="#000000">.majorTickUnit</font><font color="#000000">(</font><font color="#990000">1.0</font><font color="#000000">)</font><font color="#000000">.maxWidth</font><font color="#000000">(</font><font color="#990000">200</font><font color="#000000">)</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">Label&nbsp;l&nbsp;=&nbsp;LabelBuilder.create</font><font color="#000000">()</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">06</font>&nbsp;<font color="#000000">c.scaleXProperty</font><font color="#000000">()</font><font color="#000000">.bind</font><font color="#000000">(</font><font color="#000000">s.valueProperty</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#000000">c.scaleYProperty</font><font color="#000000">()</font><font color="#000000">.bind</font><font color="#000000">(</font><font color="#000000">s.valueProperty</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">09</font>&nbsp;<font color="#000000">s.valueProperty</font><font color="#000000">()</font><font color="#000000">.addListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ChangeListener&lt;Number&gt;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">changed</font><font color="#000000">(</font><font color="#000000">ObservableValue&lt;?&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">Number&gt;&nbsp;observable,&nbsp;Number&nbsp;oldValue,&nbsp;Number&nbsp;newValue</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">l.setText</font><font color="#000000">(</font><font color="#000000">nf.format</font><font color="#000000">(</font><font color="#000000">newValue</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#000000">})</font><font color="#000000">;</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+		]]>
+				</item>
+			</content>
+
+			<!-- <content name="Doclet"> <title>Doclet</title> <item>Doclet Customisé</item> <item level="1">gestion de la javadoc</item> <item image="images/splash/L'enrichissement.jpg" /> </content> -->
+		</slide>
+
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 4 ******************************************** -->
+		<!-- ********************************************************************************************* -->
 
 		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 5: \n\n    Event Handling</title>
+			<title>Part 4: \n\n Styling</title>
 		</slide>
+
+		<!-- CSS -->
+		<slide>
+			<title>CSS</title>
+			<content>
+				<item>Based on the W3C CSS 2.1 (some 3 features)</item>
+				<item>-fx- prefix</item>
+				<item>No layout and no position</item>
+				<item>9-Slice Scaling</item>
+				<item>Layering</item>
+				<item>Linked to a Scene object</item>
+				<item>Compilable into binary (BCSS)</item>
+			</content>
+		</slide>
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 5 ******************************************** -->
+		<!-- ********************************************************************************************* -->
 
 		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 6: \n\n    FX Effects</title>
+			<title>Part 5: \n\n Event Handling</title>
 		</slide>
+
+		<!-- Handler -->
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.handler.HandlerModel">
+			<title>EventHandler &amp; EventFilter</title>
+			<content>
+				<item>Capturing Phase</item>
+				<item level="1">From Stage to trigger node</item>
+				<item level="1">Caught with addEventFilters()</item>
+
+				<item>Bubbling Phase</item>
+				<item level="1">From trigger node to Stage</item>
+				<item level="1">Caught with addEventHandlers()</item>
+
+				<item>Sample Tree</item>
+				<item level="1">Stage</item>
+				<item level="1">Scene</item>
+				<item level="1">BorderPane</item>
+				<item level="2">Label (Top)</item>
+				<item level="2">TextArea (Center)</item>
+				<item level="2">Button (Bottom)</item>
+			</content>
+
+			<content name="EventHandler">
+				<item>Event</item>
+				<item level="1">ActionEvent, InputEvent, ListView.EditEvent, MediaErrorEvent</item>
+				<item level="1">TableColumn.CellEditEvent, TreeItem.TreeModificationEvent</item>
+				<item level="1">TreeView.EditEvent, WebEvent, WindowEvent</item>
+				<item>EventType&lt;Event&gt;, EventHandler&lt;Event&gt;</item>
+				<item>Usage</item>
+				<item level="1">addEventHandler(MouseEvent.MOUSE_CLICKED, </item>
+				<item level="1"> new EventHandler&lt;MouseEvent&gt;(...) )</item>
+				<item level="1"></item>
+				<item level="1">setOnMouseClicked(new EventHandler&lt;MouseEvent&gt;(...) )</item>
+			</content>
+
+		</slide>
+
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 6 ******************************************** -->
+		<!-- ********************************************************************************************* -->
 
 		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Part 7: \n\n    Animation</title>
+			<title>Part 6: \n\n FX Effects</title>
 		</slide>
 
-		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Just Play !</title>
+		<!-- Effets -->
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.effect.EffectModel">
+			<title>Effects</title>
+			<content>
+				<item>node.setEffect(effect)</item>
+				<item>Effects can be chained</item>
+				<item level="1">effect.setInput(effect)</item>
+			</content>
 		</slide>
+
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** PART 7 ******************************************** -->
+		<!-- ********************************************************************************************* -->
+
+		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
+			<title>Part 7: \n\n Animation</title>
+		</slide>
+
+		<!-- Transition -->
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.animation.AnimationModel">
+			<title>Animations</title>
+			<content>
+				<item>Grouped</item>
+				<item level="1">ParallelTransition</item>
+				<item level="1">SequentialTransition</item>
+				<item>Atomic</item>
+				<item>Timeline</item>
+			</content>
+
+			<content name="FillTransition">
+				<title>FillTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">FillTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.shape</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromValue</font><font color="#000000">(</font><font color="#000000">PrezColors.GRADIENT_1.get</font><font color="#000000">())</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toValue</font><font color="#000000">(</font><font color="#000000">PrezColors.GRADIENT_2.get</font><font color="#000000">())</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="StrokeTransition">
+				<title>StrokeTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">StrokeTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.shape</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromValue</font><font color="#000000">(</font><font color="#000000">PrezColors.GRADIENT_1.get</font><font color="#000000">())</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toValue</font><font color="#000000">(</font><font color="#000000">PrezColors.GRADIENT_2.get</font><font color="#000000">())</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="FadeTransition">
+				<title>FadeTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">FadeTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromValue</font><font color="#000000">(</font><font color="#990000">0.0</font><font color="#000000">)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toValue</font><font color="#000000">(</font><font color="#990000">1.0</font><font color="#000000">)</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="RotateTransition">
+				<title>RotateTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">RotateTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromAngle</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">)</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toAngle</font><font color="#000000">(</font><font color="#990000">540</font><font color="#000000">)</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="PauseTransition">
+				<title>PauseTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">SequentialTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.children</font><font color="#000000">(</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">RotateTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromAngle</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toAngle</font><font color="#000000">(</font><font color="#990000">180</font><font color="#000000">)</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.millis</font><font color="#000000">(</font><font color="#990000">400</font><font color="#000000">))</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">,</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">PauseTransitionBuilder.create</font><font color="#000000">()</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.millis</font><font color="#000000">(</font><font color="#990000">600</font><font color="#000000">))</font><font color="#000000">.build</font><font color="#000000">())</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="ScaleTransition">
+				<title>ScaleTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ScaleTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromX</font><font color="#000000">(</font><font color="#990000">1.0</font><font color="#000000">)</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.byX</font><font color="#000000">(</font><font color="#990000">0.1</font><font color="#000000">)</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toX</font><font color="#000000">(</font><font color="#990000">2.0</font><font color="#000000">)</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromY</font><font color="#000000">(</font><font color="#990000">1.0</font><font color="#000000">)</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.byY</font><font color="#000000">(</font><font color="#990000">0.1</font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toY</font><font color="#000000">(</font><font color="#990000">2.0</font><font color="#000000">)</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>				
+				]]>
+				</item>
+			</content>
+			<content name="TranslateTransition">
+				<title>TranslateTransition</title>
+				<item html="true">
+				<![CDATA[
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TranslateTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromX</font><font color="#000000">(</font><font color="#990000">0.0</font><font color="#000000">)</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toX</font><font color="#000000">(</font><font color="#990000">400.0</font><font color="#000000">)</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.fromY</font><font color="#000000">(</font><font color="#990000">0.0</font><font color="#000000">)</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.toY</font><font color="#000000">(</font><font color="#990000">200</font><font color="#000000">)</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_BOTH</font><font color="#000000">)</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="PathTransition">
+				<title>PathTransition</title>
+				<item html="true">
+				<![CDATA[
+				
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;path&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;M0&nbsp;230.717C0&nbsp;230.717&nbsp;206.085&nbsp;48.7446&nbsp;313.587&nbsp;86.8569&nbsp;421.089&nbsp;124.969&nbsp;407.816&nbsp;319.824&nbsp;506.692&nbsp;298.352&nbsp;605.567&nbsp;276.881&nbsp;704.442&nbsp;-39.8258&nbsp;800&nbsp;4.19133&#34;</font><font color="#000000">;</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">PathTransitionBuilder.create</font><font color="#000000">()</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.node</font><font color="#000000">(</font><font color="#000000">demoRectangle</font><font color="#000000">)</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.path</font><font color="#000000">(</font><font color="#000000">SVGPathBuilder.create</font><font color="#000000">()</font><font color="#000000">.content</font><font color="#000000">(</font><font color="#000000">path</font><font color="#000000">)</font><font color="#000000">.build</font><font color="#000000">())</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.autoReverse</font><font color="#000000">(</font><font color="#7f0055"><b>true</b></font><font color="#000000">)</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.cycleCount</font><font color="#000000">(</font><font color="#000000">Animation.INDEFINITE</font><font color="#000000">)</font><br />
+<font color="#808080">7</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.interpolator</font><font color="#000000">(</font><font color="#000000">Interpolator.EASE_IN</font><font color="#000000">)</font><br />
+<font color="#808080">8</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.duration</font><font color="#000000">(</font><font color="#000000">Duration.seconds</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">))</font><br />
+<font color="#808080">9</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">.build</font><font color="#000000">()</font><font color="#000000">.play</font><font color="#000000">()</font><font color="#000000">;</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</body></html>
+				]]>
+				</item>
+			</content>
+			<content name="Timeline">
+				<title>Timeline</title>
+				<item>Uses KeyFrames</item>
+				<item level="1">Can update any JavaFX properties</item>
+				<item level="1">KeyValue</item>
+				<item level="1">onFinished</item>
+				<item>AnimationTimer</item>
+				<item level="1">interpolate</item>
+			</content>
+		</slide>
+
+		<!-- ********************************************************************************************* -->
+		<!-- ***************************************** END ******************************************** -->
+		<!-- ********************************************************************************************* -->
+
 
 		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
 			<title>Java 8 Overview</title>

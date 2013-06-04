@@ -15,34 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jrebirth.presentation.eclipsecon.ui.slides.basic;
-
-import javafx.scene.layout.Pane;
+package org.jrebirth.presentation.eclipsecon.ui.slides.node;
 
 import org.jrebirth.core.exception.CoreException;
-import org.jrebirth.core.ui.annotation.RootNodeId;
-import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
+import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseController;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
- * The class <strong>AbstractTemplateView</strong>.
- * 
- * The view used to display a standard template slide.
+ * The class <strong>NodeController</strong>.
  * 
  * @author Sébastien Bordes
  */
-@RootNodeId("BasicSlide")
-public class BasicView extends AbstractBaseView<BasicModel, Pane, BasicController> {
+public final class NodeController extends AbstractBaseController<NodeModel, NodeView> {
 
     /**
      * Default Constructor.
      * 
-     * @param model the controls view model
+     * @param view the view to control
      * 
-     * @throws CoreException if build fails
+     * @throws CoreException if an error occurred while creating event handlers
      */
-    public BasicView(final BasicModel model) throws CoreException {
-        super(model);
+    public NodeController(final NodeView view) throws CoreException {
+        super(view);
     }
 
 }

@@ -91,7 +91,7 @@ import org.jrebirth.presentation.ui.base.SlideStep;
  * @param <C> the generic type
  * @author Sébastien Bordes
  */
-public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N extends AnchorPane, C extends AbstractBaseController<?, ?>> extends
+public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N extends Pane, C extends AbstractBaseController<?, ?>> extends
         AbstractSlideView<M, N, C> {
 
     /** Prefix used for css class. */
@@ -101,7 +101,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     private Label secondaryTitle;
 
     /** The pane that hold the content. */
-    private StackPane slideContent;
+    private StackPane slideContentPane;
 
     /** The list of nodes taht reprensent each subslide. */
     private final List<Node> subSlides = new ArrayList<>();
@@ -180,27 +180,27 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     @Override
     protected void initView() {
 
-        this.slideContent = new StackPane();
-        this.slideContent.setOpacity(1.0);
-        this.slideContent.getStyleClass().add("content");
+        this.slideContentPane = new StackPane();
+        this.slideContentPane.setOpacity(1.0);
+        this.slideContentPane.getStyleClass().add("content");
 
         // 85 151
-        this.slideContent.setMinSize(854, 634);
-        this.slideContent.setMaxSize(854, 634);
-        this.slideContent.setPrefSize(854, 634);
+        this.slideContentPane.setMinSize(854, 634);
+        this.slideContentPane.setMaxSize(854, 634);
+        this.slideContentPane.setPrefSize(854, 634);
 
-        this.slideContent.setLayoutX(83.0);
-        this.slideContent.setLayoutY(120.0);
+        this.slideContentPane.setLayoutX(83.0);
+        this.slideContentPane.setLayoutY(120.0);
 
         final Node header = getHeaderPanel();
+
+        // initialize the begin properties for the transition
+        this.slideContentPane.setScaleX(0);
+        this.slideContentPane.setScaleY(0);
 
         if (!getModel().hasStep()) {
             addSubSlide(getContentPanel());
         }
-
-        // initialize the begin properties for the transition
-        this.slideContent.setScaleX(0);
-        this.slideContent.setScaleY(0);
 
         for (int i = 0; i < rectangles.length; i++) {
             Rectangle r = new Rectangle(122, 11);
@@ -220,8 +220,9 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
         buildLogo();
         buildPage();
 
-        getRootNode().getChildren().addAll(eclipseCONLogo, jrebirthLogo,/* footer, */this.slideContent, header);
+        getRootNode().getChildren().addAll(eclipseCONLogo, jrebirthLogo,/* footer, */this.slideContentPane, header);
         getRootNode().getChildren().addAll(rectangles);
+
     }
 
     private void buildPage() {
@@ -294,7 +295,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     private void addSubSlide(final Node defaultSubSlide) {
 
         this.subSlides.add(getModel().getStepPosition(), defaultSubSlide);
-        this.slideContent.getChildren().add(defaultSubSlide);
+        this.slideContentPane.getChildren().add(defaultSubSlide);
 
         StackPane.setAlignment(defaultSubSlide, Pos.CENTER);
 
@@ -324,8 +325,8 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
             r.setOpacity(0.0);
         }
 
-        this.slideContent.setScaleX(0);
-        this.slideContent.setScaleY(0);
+        this.slideContentPane.setScaleX(0);
+        this.slideContentPane.setScaleY(0);
     }
 
     /**
@@ -479,7 +480,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                                                 .toY(1)
                                                 .build()
                                 )
-                                .node(this.slideContent)
+                                .node(this.slideContentPane)
                                 .build(),
                         displayRectangle()
                 ).build();
@@ -541,7 +542,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
      */
     protected VBox buildDefaultContent(final SlideContent slideContent) {
 
-        if (slideContent.getTitle() != null) {
+        if (slideContent.getTitle() != null && secondaryTitle != null) {
             this.secondaryTitle.setText(slideContent.getTitle());
         }
 
@@ -741,7 +742,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
      * @return Returns the slideContent.
      */
     protected StackPane getSlideContent() {
-        return this.slideContent;
+        return this.slideContentPane;
     }
 
     /**

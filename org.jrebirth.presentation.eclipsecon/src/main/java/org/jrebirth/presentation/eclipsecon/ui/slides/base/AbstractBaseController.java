@@ -20,7 +20,6 @@ package org.jrebirth.presentation.eclipsecon.ui.slides.base;
 import org.jrebirth.core.exception.CoreException;
 import org.jrebirth.presentation.ui.base.AbstractSlideController;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>AbstractTemplateController</strong>.
  * 
