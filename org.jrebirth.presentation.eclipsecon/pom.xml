@@ -14,7 +14,7 @@
 		<deployUrl>http://apps.jrebirth.org</deployUrl>
 		<deployPath>${project.artifactId}/${project.version}</deployPath>
 
-		<jnlpFilename>LightningTalk.jnlp</jnlpFilename>
+		<jnlpFilename>EclipseCON.jnlp</jnlpFilename>
 		<appClass>org.jrebirth.presentation.eclipsecon.EclipseCON</appClass>
 
 		<appletWidth>1024</appletWidth>

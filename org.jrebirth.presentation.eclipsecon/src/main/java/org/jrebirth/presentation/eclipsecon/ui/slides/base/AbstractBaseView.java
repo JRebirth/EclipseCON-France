@@ -22,10 +22,12 @@ import java.util.List;
 
 import javafx.animation.Animation;
 import javafx.animation.FadeTransitionBuilder;
+import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.ParallelTransition;
 import javafx.animation.ParallelTransitionBuilder;
+import javafx.animation.RotateTransitionBuilder;
 import javafx.animation.ScaleTransitionBuilder;
 import javafx.animation.SequentialTransition;
 import javafx.animation.SequentialTransitionBuilder;
@@ -36,16 +38,18 @@ import javafx.beans.binding.NumberBinding;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.GroupBuilder;
 import javafx.scene.Node;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.HyperlinkBuilder;
 import javafx.scene.control.Label;
 import javafx.scene.control.LabelBuilder;
 import javafx.scene.effect.BlendMode;
+import javafx.scene.effect.BloomBuilder;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadowBuilder;
-import javafx.scene.effect.MotionBlur;
-import javafx.scene.effect.MotionBlurBuilder;
+import javafx.scene.effect.GlowBuilder;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.ImageViewBuilder;
@@ -154,6 +158,8 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     /** The label that display the number of the page. */
     private Label pageLabel;
 
+    private Group headerPatternGroup;
+
     /**
      * Default Constructor.
      * 
@@ -228,9 +234,11 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     private void buildPage() {
 
         this.page3Petals = ImageViewBuilder.create()
-                .layoutX(900) // 32
+                .layoutX(900) // 900 32
                 .layoutY(25) // 231
+                .translateX(200)
                 .image(EcImages.PAGE_3_PETALS.get())
+                .effect(GlowBuilder.create().level(0.2).build())
                 .build();
 
         this.pageLabel = LabelBuilder.create()
@@ -239,17 +247,23 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                 .text(String.valueOf(getModel().getSlide().getPage()))
                 .font(PrezFonts.PAGE.get())
                 .textFill(rectangleColors[3])
+                .scaleX(0).scaleY(0)
                 .build();
 
         this.page1Petal = ImageViewBuilder.create()
                 .layoutX(960) // 32
                 .layoutY(16) // 231
+                .translateX(200)
+                .translateY(-200)
                 .image(EcImages.PAGE_1_PETAL.get())
+                .effect(GlowBuilder.create().level(0.2).build())
                 .build();
 
         this.pageRays = ImageViewBuilder.create()
                 .layoutX(890) // 32
                 .layoutY(30) // 231
+                .opacity(0)
+                .effect(BloomBuilder.create().threshold(0.7).build())
                 .image(EcImages.PAGE_RAYS.get())
                 .build();
 
@@ -257,6 +271,9 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                 .layoutX(960) // 32
                 .layoutY(8) // 231
                 .image(EcImages.PAGE_SPARK.get())
+                .effect(BloomBuilder.create().threshold(1.0).build())
+                .opacity(0)
+                .scaleX(0).scaleY(0)
                 .build();
 
         getRootNode().getChildren().addAll(page3Petals, pageLabel, page1Petal, pageRays, pageSpark);
@@ -318,6 +335,23 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
         this.primaryTitle.setOpacity(0.0);
         this.secondaryTitle.setOpacity(0.0);
 
+        this.page3Petals.setTranslateX(200);
+
+        pageLabel.setScaleX(0);
+        pageLabel.setScaleY(0);
+
+        page1Petal.setTranslateX(200);
+        page1Petal.setTranslateY(-200);
+
+        pageRays.setOpacity(0.0);
+
+        pageSpark.setScaleX(0);
+        pageSpark.setScaleY(0);
+        pageSpark.setOpacity(0);
+
+        headerRectangle.setTranslateX(-1100);
+        headerPatternGroup.setTranslateY(-150);
+
         this.eclipseCONLogo.setTranslateY(500);
         this.jrebirthLogo.setTranslateY(500);
 
@@ -335,95 +369,18 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     @Override
     public void reload() {
 
-        // MUST be refactored with property binding
-
-        // this.pageLabel.setText(String.valueOf(getModel().getSlideNumber()));
-
-        // FadeTransitionBuilder.create()
-        // .node(getRootNode().getTop())
-        // .duration(Duration.millis(600))
-        // .fromValue(0).toValue(0.7)
-        // .build().play();
-
-        // FadeTransitionBuilder.create()
-        // .node(getRootNode().getCenter())
-        // .duration(Duration.millis(600))
-        // .fromValue(0)
-        // .toValue(0.4)
-        // .build().play();
-        final MotionBlur mb = MotionBlurBuilder.create().angle(180).build();
-
         ParallelTransitionBuilder.create().children(
 
-                // ParallelTransitionBuilder.create().children(
-                // ScaleTransitionBuilder
-                // .create()
-                // .node(this.smallPokemon)
-                // .duration(Duration.millis(400))
-                // .fromX(0)
-                // .fromY(0)
-                // .toX(1)
-                // .toY(1)
-                // .build(),
-                // RotateTransitionBuilder.create()
-                // .node(this.smallPokemon)
-                // .duration(Duration.millis(800))
-                // .fromAngle(1080)
-                // .toAngle(-135)
-                // .build(),
-                // ScaleTransitionBuilder
-                // .create()
-                // .node(this.bigPokemon)
-                // .delay(Duration.millis(200))
-                // .duration(Duration.millis(400))
-                // .fromX(0)
-                // .fromY(0)
-                // .toX(1.2)
-                // .toY(1.2)
-                // .build(),
-                // RotateTransitionBuilder.create()
-                // .node(this.bigPokemon)
-                // .delay(Duration.millis(200))
-                // .duration(Duration.millis(800))
-                // .fromAngle(0)
-                // .toAngle(1080)
-                // .build(),
+                // 100-700
+                buildContentAnimation(),
 
-                // TimelineBuilder.create()
-                // .delay(Duration.millis(200))
-                // .keyFrames(
-                // new KeyFrame(Duration.millis(0), new KeyValue(this.topRectangle.widthProperty(), 0)),
-                // new KeyFrame(Duration.millis(600), new KeyValue(this.topRectangle.widthProperty(), 300))
-                // )
-                // .build(),
+                // 200 -700
+                buildHeaderAnimation(),
 
-                // TimelineBuilder.create()
-                // .delay(Duration.millis(1200))
-                // .keyFrames(
-                // new KeyFrame(Duration.millis(0),
-                // new KeyValue(this.headerRectangle.widthProperty(), 0),
-                // new KeyValue(this.headerRectangle.xProperty(), 1000)
-                // ),
-                // new KeyFrame(Duration.millis(300),
-                // new KeyValue(this.headerRectangle.widthProperty(), 300),
-                // new KeyValue(this.headerRectangle.xProperty(), 700)
-                // )
-                // )
-                // .build(),
-                TranslateTransitionBuilder.create()
-                        .node(this.eclipseCONLogo)
-                        .delay(Duration.millis(1500))
-                        .duration(Duration.millis(300))
-                        .toY(-500)
-                        .build(),
+                // 400-1900
+                buildPageAnimation(),
 
-                TranslateTransitionBuilder.create()
-                        .node(this.jrebirthLogo)
-                        .delay(Duration.millis(1700))
-                        .duration(Duration.millis(300))
-                        .toY(-500)
-                        .build(),
-
+                // 1000-1600
                 FadeTransitionBuilder.create()
                         .node(this.primaryTitle)
                         .delay(Duration.millis(1000))
@@ -431,6 +388,7 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                         .fromValue(0)
                         .toValue(1.0)
                         .build(),
+                // 1200-1800
                 FadeTransitionBuilder.create()
                         .node(this.secondaryTitle)
                         .delay(Duration.millis(1200))
@@ -438,12 +396,109 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                         .fromValue(0)
                         .toValue(1.0)
                         .build(),
-                // ).build()
+                // 1400-1700
+                TranslateTransitionBuilder.create()
+                        .node(this.eclipseCONLogo)
+                        .delay(Duration.millis(1400))
+                        .duration(Duration.millis(300))
+                        .toY(-500)
+                        .build(),
+                // 1700-2000
+                TranslateTransitionBuilder.create()
+                        .node(this.jrebirthLogo)
+                        .delay(Duration.millis(1700))
+                        .duration(Duration.millis(300))
+                        .toY(-500)
+                        .build()
 
-                // SlideContent
-                displayContent()
                 )
                 .build().play();
+    }
+
+    private Animation buildHeaderAnimation() {
+        return
+        // Step 1 rotate and translate
+        ParallelTransitionBuilder.create()
+                .delay(Duration.millis(200))
+                .children(
+                        TranslateTransitionBuilder.create()
+                                .node(headerRectangle)
+                                .byX(1100)
+                                .duration(Duration.millis(500))
+                                .interpolator(Interpolator.EASE_IN)
+                                .build(),
+                        TranslateTransitionBuilder.create()
+                                .node(headerPatternGroup)
+                                .byY(150)
+                                .duration(Duration.millis(500))
+                                .interpolator(Interpolator.EASE_IN)
+                                .build()
+                ).build();
+    }
+
+    private Animation buildPageAnimation() {
+        return SequentialTransitionBuilder.create()
+                .delay(Duration.millis(400))
+                .children(
+                        // Step 1 rotate and translate
+                        ParallelTransitionBuilder.create()
+                                .node(page3Petals)
+                                .children(
+                                        RotateTransitionBuilder.create()
+                                                .byAngle(1080)
+                                                .duration(Duration.millis(500))
+                                                .interpolator(Interpolator.EASE_IN)
+                                                .build(),
+                                        TranslateTransitionBuilder.create()
+                                                .byX(-200)
+                                                .duration(Duration.millis(400))
+                                                .interpolator(Interpolator.EASE_IN)
+                                                .build()
+                                ).build(),
+
+                        // Step 2 zoomin page, translate mono petal
+                        ParallelTransitionBuilder.create()
+                                .children(
+                                        ScaleTransitionBuilder.create()
+                                                .node(pageLabel)
+                                                .fromX(0).fromY(0)
+                                                .toX(1.0).toY(1.0)
+                                                .duration(Duration.millis(400))
+                                                .build(),
+                                        TranslateTransitionBuilder.create()
+                                                .node(page1Petal)
+                                                .byX(-200)
+                                                .byY(200)
+                                                .duration(Duration.millis(300))
+                                                .interpolator(Interpolator.EASE_IN)
+                                                .build()
+                                ).build(),
+
+                        // step3 fade in rays
+                        FadeTransitionBuilder.create().node(pageRays)
+                                .fromValue(0.0).toValue(1.0)
+                                .duration(Duration.millis(300))
+                                .build(),
+
+                        // step 4 zoom in and fadein spark
+                        ParallelTransitionBuilder.create()
+                                .node(pageSpark)
+                                .children(
+                                        FadeTransitionBuilder.create()
+                                                .fromValue(0.0).toValue(1.0)
+                                                .duration(Duration.millis(300))
+                                                .build(),
+                                        ScaleTransitionBuilder.create()
+                                                .fromX(0).fromY(0)
+                                                .toX(1.0).toY(1.0)
+                                                .duration(Duration.millis(200))
+                                                .build()
+                                )
+
+                                .build()
+                )
+
+                .build();
     }
 
     /**
@@ -451,19 +506,13 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
      * 
      * @return
      */
-    private SequentialTransition displayContent() {
+    private SequentialTransition buildContentAnimation() {
         return SequentialTransitionBuilder.create()
                 .children(
                         ParallelTransitionBuilder
                                 .create()
-                                .delay(Duration.millis(300))
+                                .delay(Duration.millis(100))
                                 .children(
-                                        // RotateTransitionBuilder
-                                        // .create()
-                                        // .duration(Duration.millis(600))
-                                        // .fromAngle(-180)
-                                        // .toAngle(0)
-                                        // .build(),
                                         TranslateTransitionBuilder.create()
                                                 .duration(Duration.millis(600))
                                                 .fromX(1024 / 2)
@@ -768,11 +817,13 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                 .layoutX(100)
                 .layoutY(16)
                 .opacity(0)
-                .effect(DropShadowBuilder.create()
-                        .blurType(BlurType.TWO_PASS_BOX)
-                        .color(EcColors.SLIDE_TITLE_GLOW.get())
-                        .radius(8)
-                        .spread(0.5)
+                .effect(BloomBuilder.create().threshold(1.0).input(
+                        DropShadowBuilder.create()
+                                .blurType(BlurType.TWO_PASS_BOX)
+                                .color(EcColors.SLIDE_TITLE_GLOW.get())
+                                .radius(8)
+                                .spread(0.5)
+                                .build())
                         .build())
 
                 // .style("-fx-background-color:#CCCB20")
@@ -783,11 +834,13 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                 .font(EcFonts.SLIDE_SUB_TITLE.get())
                 .textFill(EcColors.SLIDE_TITLE.get())
                 .opacity(0)
-                .effect(DropShadowBuilder.create()
-                        .blurType(BlurType.TWO_PASS_BOX)
-                        .color(EcColors.SLIDE_TITLE_GLOW.get())
-                        .radius(4)
-                        .spread(0.6)
+                .effect(BloomBuilder.create().threshold(1.0).input(
+                        DropShadowBuilder.create()
+                                .blurType(BlurType.TWO_PASS_BOX)
+                                .color(EcColors.SLIDE_TITLE_GLOW.get())
+                                .radius(4)
+                                .spread(0.6)
+                                .build())
                         .build())
                 .layoutX(100)
                 .layoutY(70)
@@ -813,17 +866,13 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
         // .textAlignment(TextAlignment.RIGHT)
         // .build();
 
-        // final Polyline pl = PolylineBuilder.create()
-        // .strokeWidth(3)
-        // .stroke(Color.web("F79508"))
-        // .points(684.0, 12.0, 946.0, 12.0, 946.0, 107.0)
-        // .build();
-
         this.headerRectangle = RectangleBuilder.create()
                 .layoutX(0)
                 .layoutY(0)
                 .width(860)
                 .height(115.0)
+                .translateX(-1100)
+                // .transforms(RotateBuilder.create().pivotX(860).pivotY(115).angle(-180).build())
                 .fill(Color.BLACK)
                 .build();
 
@@ -843,76 +892,15 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
                 .layoutY(0)
                 .build();
 
-        // this.circle = CircleBuilder.create()
-        // .scaleX(0)
-        // .scaleY(0)
-        // .layoutX(18 + 54)
-        // .layoutY(18 + 54)
-        // .radius(54)
-        // .fill(Color.web("444442"))
-        // .build();
-        // final Effect smallPokemonEffect =
-        // InnerShadowBuilder.create()
-        // .offsetX(1)
-        // .offsetY(1)
-        // .color(Color.LIGHTGRAY)
-        // .input(GlowBuilder.create()
-        // .level(0.6)
-        // .build())
-        // .build();
-        //
-        // final Effect bigPokemonEffect =
-        // DropShadowBuilder.create()
-        // .offsetX(2)
-        // .offsetY(2)
-        // .input(GlowBuilder.create()
-        // .level(0.6)
-        // .build())
-        // .build();
+        headerPatternGroup = GroupBuilder.create()
+                .translateY(-150)
+                .children(headerPattern1, headerPattern2)
+                .build();
 
-        // this.smallPokemon = SVGPathBuilder
-        // .create()
-        // .scaleX(0)
-        // .scaleY(0)
-        // .layoutX(40)
-        // .layoutY(40)
-        // .fill(Color.web("F79508"))
-        // .effect(smallPokemonEffect)
-        // .content(
-        // "M64.332,33.584l3.166-3.166C65.99,14.311,53.104,1.493,36.916,0l-3.167,3.167L30.582,0 C14.394,1.493,1.507,14.312,0,30.419l3.166,3.166L0,36.751c1.508,16.106,14.395,28.925,30.582,30.418l3.167-3.167l3.168,3.168 c16.188-1.493,29.073-14.313,30.58-30.421L64.332,33.584z M37.387,44.951h-7.275c-5.114,0-9.26-4.146-9.26-9.26v-4.917 c0-5.114,4.146-9.26,9.26-9.26h7.275c5.114,0,9.26,4.146,9.26,9.26v4.917C46.646,40.805,42.501,44.951,37.387,44.951z")
-        // .build();
-        //
-        // this.bigPokemon = SVGPathBuilder
-        // .create()
-        // .scaleX(0)
-        // .scaleY(0)
-        // .layoutX(40)
-        // .layoutY(40)
-        // .fill(Color.web("D9E021"))
-        // .effect(bigPokemonEffect)
-        // .content(
-        // "M64.332,33.584l3.166-3.166C65.99,14.311,53.104,1.493,36.916,0l-3.167,3.167L30.582,0 C14.394,1.493,1.507,14.312,0,30.419l3.166,3.166L0,36.751c1.508,16.106,14.395,28.925,30.582,30.418l3.167-3.167l3.168,3.168 c16.188-1.493,29.073-14.313,30.58-30.421L64.332,33.584z M37.387,44.951h-7.275c-5.114,0-9.26-4.146-9.26-9.26v-4.917 c0-5.114,4.146-9.26,9.26-9.26h7.275c5.114,0,9.26,4.146,9.26,9.26v4.917C46.646,40.805,42.501,44.951,37.387,44.951z")
-        // .build();
-
-        // final FlowPane fp = FlowPaneBuilder.create()
-        // .orientation(Orientation.HORIZONTAL)
-        // .alignment(Pos.BASELINE_CENTER)
-        // .children(this.secondaryTitle)
-        // // .style("-fx-background-color:#CCCCCC")
-        // .build();
-
-        headerPane.getChildren().addAll(/* this.topRectangle, */this.headerRectangle, headerPattern1, headerPattern2,
+        headerPane.getChildren().addAll(/* this.topRectangle, */this.headerRectangle, headerPatternGroup,
                 // this.bigPokemon, this.smallPokemon,
                 this.primaryTitle, this.secondaryTitle
                 );
-
-        // AnchorPane.setRightAnchor(this.secondaryTitle, 80.0);
-
-        // ap.setStyle("-fx-background-color:#002266");
-
-        // sp.setStyle("-fx-background-color:#663366");
-        // StackPane.setAlignment(ap, Pos.BOTTOM_CENTER);
-        // sp.getChildren().add(ap);
 
         return headerPane;
 
