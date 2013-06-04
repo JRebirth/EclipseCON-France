@@ -112,7 +112,7 @@
 				<item level="1">Helps JavaFX coding</item>
 				<item level="1">Provides OSGi integration</item>
 				<item level="1">Provides e4 integration</item>
-				<item level="2">Follow Tom Schindl (BestSolution.at)</item>
+				<item level="2">Follow Tom Schindl @tomsomtom (BestSolution.at)</item>
 				<item></item>
 				<item>Scene Builder</item>
 				<item level="1">produces FXML file</item>
@@ -122,6 +122,8 @@
 		<slide showAnimation="FadeIn" hideAnimation="FadeOut">
 			<title>Get efxclipse</title>
 			<content>
+				<item>Available on Market Place</item>
+				<item></item>
 				<item>from update site:</item>
 				<item link="true">http://downloads.efxclipse.org/p2-repos/releases/latest/</item>
 				<item></item>
@@ -131,6 +133,10 @@
 
 		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
 			<title>Let's play with efxclipse</title>
+		</slide>
+
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>DEMO</title>
 		</slide>
 
 
@@ -146,6 +152,10 @@
 
 		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
 			<title>Let's try SceneBuilder</title>
+		</slide>
+
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>DEMO</title>
 		</slide>
 
 
@@ -179,7 +189,11 @@
 		</slide>
 
 		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
-			<title>Play It!</title>
+			<title>Start Game !</title>
+		</slide>
+
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>DEMO</title>
 		</slide>
 
 		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
@@ -260,6 +274,10 @@
 			</content>
 		</slide>
 
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
+
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** PART 2 ******************************************** -->
 		<!-- ********************************************************************************************* -->
@@ -271,16 +289,16 @@
 		<!-- Node -->
 		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.node.NodeModel" style="nodeContent" showAnimation="MoveFromLeft" hideAnimation="MoveToRight">
 			<title>Graphical Tree</title>
-	
+
 			<content>
 				<item>Stage, Scene and Root Node</item>
 				<item>Any visual component is a node</item>
 				<item image="images/uml/node.png" />
-				<item>Parent (Branches)</item>
-				<item>Shape (Leaves)</item>
-				<item>ImageView</item>
-				<item>MediaView</item>
-				<item>Canvas (since 2.2)</item>
+				<item level="1">Parent (Branches)</item>
+				<item level="1">Shape (Leaves)</item>
+				<item level="1">ImageView</item>
+				<item level="1">MediaView</item>
+				<item level="1">Canvas (since 2.2)</item>
 			</content>
 
 			<content name="Stateful">
@@ -308,6 +326,10 @@
 			</content>
 		</slide>
 
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="MoveFromLeft" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
+
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** PART 3 ******************************************** -->
 		<!-- ********************************************************************************************* -->
@@ -317,7 +339,7 @@
 		</slide>
 
 		<!-- Properties -->
-		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.property.PropertyModel">
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.property.PropertyModel" showAnimation="ScaleFromMax" hideAnimation="MoveToTop">
 			<title>Observable And Binding</title>
 			<content>
 				<title>Collection</title>
@@ -499,17 +521,20 @@
 			<!-- <content name="Doclet"> <title>Doclet</title> <item>Doclet Customisé</item> <item level="1">gestion de la javadoc</item> <item image="images/splash/L'enrichissement.jpg" /> </content> -->
 		</slide>
 
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="MoveFromBottom" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
 
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** PART 4 ******************************************** -->
 		<!-- ********************************************************************************************* -->
 
-		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="ScaleToMin">
+		<slide style="partX" modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.intro.IntroModel" showAnimation="FadeIn" hideAnimation="MoveToLeft">
 			<title>Part 4: \n\n Styling</title>
 		</slide>
 
 		<!-- CSS -->
-		<slide>
+		<slide showAnimation="ScaleFromMax" hideAnimation="MoveToLeft">
 			<title>CSS</title>
 			<content>
 				<item>Based on the W3C CSS 2.1 (some 3 features)</item>
@@ -522,6 +547,10 @@
 			</content>
 		</slide>
 
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="MoveFromRight" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
+
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** PART 5 ******************************************** -->
 		<!-- ********************************************************************************************* -->
@@ -531,7 +560,7 @@
 		</slide>
 
 		<!-- Handler -->
-		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.handler.HandlerModel">
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.handler.HandlerModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<title>EventHandler &amp; EventFilter</title>
 			<content>
 				<item>Capturing Phase</item>
@@ -554,6 +583,7 @@
 			<content name="EventHandler">
 				<item>Event</item>
 				<item level="1">ActionEvent, InputEvent, ListView.EditEvent, MediaErrorEvent</item>
+				<item level="1">TouchEvent, RotateEvent, ScrollEvent, SwipeEvent, ZoomEvent</item>
 				<item level="1">TableColumn.CellEditEvent, TreeItem.TreeModificationEvent</item>
 				<item level="1">TreeView.EditEvent, WebEvent, WindowEvent</item>
 				<item>EventType&lt;Event&gt;, EventHandler&lt;Event&gt;</item>
@@ -576,7 +606,7 @@
 		</slide>
 
 		<!-- Effets -->
-		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.effect.EffectModel">
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.effect.EffectModel" showAnimation="ScaleFromMax" hideAnimation="ScaleToMin">
 			<title>Effects</title>
 			<content>
 				<item>node.setEffect(effect)</item>
@@ -585,6 +615,10 @@
 			</content>
 		</slide>
 
+
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
 
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** PART 7 ******************************************** -->
@@ -595,7 +629,7 @@
 		</slide>
 
 		<!-- Transition -->
-		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.animation.AnimationModel">
+		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.animation.AnimationModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<title>Animations</title>
 			<content>
 				<item>Grouped</item>
@@ -908,10 +942,26 @@
 			</content>
 		</slide>
 
+
+		<slide modelClass="org.jrebirth.presentation.ui.splash.SplashModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
+			<title>CODE</title>
+		</slide>
+
 		<!-- ********************************************************************************************* -->
 		<!-- ***************************************** END ******************************************** -->
 		<!-- ********************************************************************************************* -->
 
+
+		<slide showAnimation="FadeIn" hideAnimation="FadeOut">
+			<title>Other JavaFX features</title>
+			<content>
+				<item>Node Skin</item>
+				<item>WebView with Javascript engine</item>
+				<item>Charts</item>
+				<item>Media player (H264, MP3 ...)</item>
+				<item>Image manipulation</item>
+			</content>
+		</slide>
 
 		<slide showAnimation="FadeIn" hideAnimation="ScaleToMin">
 			<title>Java 8 Overview</title>
@@ -930,7 +980,7 @@
 
 		<slide modelClass="org.jrebirth.presentation.ui.image.ImageSlideModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<content>
-				<item image="images/splash/Merci.png" />
+				<item image="images/splash/Thanks.png" />
 			</content>
 		</slide>
 
@@ -939,7 +989,7 @@
 
 		<slide modelClass="org.jrebirth.presentation.ui.image.ImageSlideModel" showAnimation="FadeIn" hideAnimation="FadeOut">
 			<content>
-				<item image="images/splash/Q_and_R.png" />
+				<item image="images/splash/Q_and_A.png" />
 			</content>
 		</slide>
 

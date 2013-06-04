@@ -186,6 +186,8 @@ public abstract class AbstractBaseView<M extends AbstractBaseModel<?, ?, ?>, N e
     @Override
     protected void initView() {
 
+        getRootNode().getStyleClass().add("Slide");
+
         this.slideContentPane = new StackPane();
         this.slideContentPane.setOpacity(1.0);
         this.slideContentPane.getStyleClass().add("content");
