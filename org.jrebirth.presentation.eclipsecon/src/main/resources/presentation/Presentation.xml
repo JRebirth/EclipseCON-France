@@ -288,6 +288,7 @@
 
 		<!-- Node -->
 		<slide modelClass="org.jrebirth.presentation.eclipsecon.ui.slides.node.NodeModel" style="nodeContent" showAnimation="MoveFromLeft" hideAnimation="MoveToRight">
+		
 			<title>Graphical Tree</title>
 
 			<content>
