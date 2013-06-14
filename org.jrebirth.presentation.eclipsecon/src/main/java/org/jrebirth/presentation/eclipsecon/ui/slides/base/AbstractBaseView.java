@@ -76,12 +76,12 @@ import javafx.scene.web.WebViewBuilder;
 import javafx.util.Duration;
 
 import org.jrebirth.core.exception.CoreException;
-import org.jrebirth.presentation.PrezFonts;
 import org.jrebirth.presentation.eclipsecon.resources.EcColors;
 import org.jrebirth.presentation.eclipsecon.resources.EcFonts;
 import org.jrebirth.presentation.eclipsecon.resources.EcImages;
 import org.jrebirth.presentation.model.SlideContent;
 import org.jrebirth.presentation.model.SlideItem;
+import org.jrebirth.presentation.resource.PrezFonts;
 import org.jrebirth.presentation.ui.base.AbstractSlideView;
 import org.jrebirth.presentation.ui.base.SlideStep;
 

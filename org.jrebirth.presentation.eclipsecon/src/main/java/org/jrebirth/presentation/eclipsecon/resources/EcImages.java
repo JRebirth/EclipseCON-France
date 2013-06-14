@@ -19,6 +19,7 @@ package org.jrebirth.presentation.eclipsecon.resources;
 
 import static org.jrebirth.core.resource.Resources.create;
 
+import org.jrebirth.core.resource.image.ImageExtension;
 import org.jrebirth.core.resource.image.ImageItem;
 import org.jrebirth.core.resource.image.LocalImage;
 
@@ -30,18 +31,18 @@ import org.jrebirth.core.resource.image.LocalImage;
  */
 public interface EcImages {
 
-    ImageItem ECLIPSECON_LOGO = create(new LocalImage("images/base/Logo_EclipseCON.png"));
+    ImageItem ECLIPSECON_LOGO = create(new LocalImage("images/base/", "Logo_EclipseCON", ImageExtension.PNG));
 
-    ImageItem JREBIRTH_LOGO = create(new LocalImage("images/base/Logo_JRebirth.png"));
+    ImageItem JREBIRTH_LOGO = create(new LocalImage("images/base/", "Logo_JRebirth.png", ImageExtension.PNG));
 
-    ImageItem HEADER_PATTERN = create(new LocalImage("images/base/Header_Pattern.png"));
+    ImageItem HEADER_PATTERN = create(new LocalImage("images/base/", "Header_Pattern", ImageExtension.PNG));
 
-    ImageItem PAGE_3_PETALS = create(new LocalImage("images/base/Page_3_Petals.png"));
-    ImageItem PAGE_1_PETAL = create(new LocalImage("images/base/Page_1_Petal.png"));
-    ImageItem PAGE_SPARK = create(new LocalImage("images/base/Page_Spark.png"));
-    ImageItem PAGE_RAYS = create(new LocalImage("images/base/Page_Rays.png"));
+    ImageItem PAGE_3_PETALS = create(new LocalImage("images/base/", "Page_3_Petals", ImageExtension.PNG));
+    ImageItem PAGE_1_PETAL = create(new LocalImage("images/base/", "Page_1_Petal", ImageExtension.PNG));
+    ImageItem PAGE_SPARK = create(new LocalImage("images/base/", "Page_Spark", ImageExtension.PNG));
+    ImageItem PAGE_RAYS = create(new LocalImage("images/base/", "Page_Rays", ImageExtension.PNG));
 
-    ImageItem CUSTOM_CAR = create(new LocalImage("images/slides/fx/Custom_Car.jpg"));
-    ImageItem TEXTURE = create(new LocalImage("images/slides/fx/fabric_texture_car.jpg"));
+    ImageItem CUSTOM_CAR = create(new LocalImage("images/slides/fx/", "Custom_Car", ImageExtension.JPG));
+    ImageItem TEXTURE = create(new LocalImage("images/slides/fx/", "fabric_texture_car", ImageExtension.JPG));
 
 }
