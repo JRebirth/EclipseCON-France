@@ -31,7 +31,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import org.jrebirth.core.application.AbstractApplication;
+import org.jrebirth.core.resource.Resources;
 import org.jrebirth.core.resource.font.FontItem;
+import org.jrebirth.core.resource.style.StyleSheet;
+import org.jrebirth.core.resource.style.StyleSheetItem;
 import org.jrebirth.core.ui.Model;
 import org.jrebirth.core.wave.Wave;
 import org.jrebirth.presentation.eclipsecon.resources.EcFonts;
@@ -46,6 +49,8 @@ import org.jrebirth.presentation.ui.stack.StackModel;
  * 
  */
 public final class EclipseCON extends AbstractApplication<StackPane> {
+
+    private static StyleSheetItem CSS = Resources.create(new StyleSheet("template"));
 
     /**
      * Application launcher.
@@ -89,7 +94,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
     @Override
     protected void customizeScene(final Scene scene) {
 
-        addCSS(scene, "style/template.css");
+        addCSS(scene, CSS);
 
         // Manage F11 button to switch full screen
         scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
