@@ -23,7 +23,7 @@
 	-fx-padding : 20px 50px 20px 50px;
 	
 	-fx-background-image : url("../images/base/Background_Content.png");
-	-fx-background-position: stretch;
+	-fx-background-position: center ;
 	-fx-background-repeat : repeat-x  ;
 	
 	-fx-effect: dropshadow( gaussian , rgba(140,111,72, 0.95) , 10 , 0.5 , 0 , 0 );
