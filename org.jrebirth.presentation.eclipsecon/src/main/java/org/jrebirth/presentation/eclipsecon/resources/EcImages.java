@@ -45,4 +45,6 @@ public interface EcImages {
     ImageItem CUSTOM_CAR = create(new LocalImage("slides/fx", "Custom_Car", ImageExtension.JPG));
     ImageItem TEXTURE = create(new LocalImage("slides/fx", "fabric_texture_car", ImageExtension.JPG));
 
+    ImageItem PLACE_LOGO = create(new LocalImage("PlaceLogo", ImageExtension.JPG));
+
 }

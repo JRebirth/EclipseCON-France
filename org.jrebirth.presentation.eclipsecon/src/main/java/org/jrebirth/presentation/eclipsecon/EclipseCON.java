@@ -18,10 +18,8 @@
 package org.jrebirth.presentation.eclipsecon;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -30,25 +28,23 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import org.jrebirth.core.application.AbstractApplication;
+import org.jrebirth.core.application.DefaultApplication;
 import org.jrebirth.core.resource.Resources;
 import org.jrebirth.core.resource.font.FontItem;
 import org.jrebirth.core.resource.style.StyleSheet;
 import org.jrebirth.core.resource.style.StyleSheetItem;
 import org.jrebirth.core.ui.Model;
-import org.jrebirth.core.wave.Wave;
 import org.jrebirth.presentation.eclipsecon.resources.EcFonts;
 import org.jrebirth.presentation.ui.stack.StackModel;
 
 /**
  * The class <strong>EclipseCON</strong>.
  * 
- * Application as support for live javafx 2.2 lightning talk.
+ * Application as support for EclipseCON JavaFX workshop.
  * 
  * @author Sébastien Bordes
- * 
  */
-public final class EclipseCON extends AbstractApplication<StackPane> {
+public final class EclipseCON extends DefaultApplication<StackPane> {
 
     private static StyleSheetItem CSS = Resources.create(new StyleSheet("template"));
 
@@ -58,7 +54,7 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
      * @param args the command line arguments
      */
     public static void main(final String... args) {
-        Application.launch(EclipseCON.class, args);
+        preloadAndLaunch(args);
     }
 
     /**
@@ -137,24 +133,6 @@ public final class EclipseCON extends AbstractApplication<StackPane> {
                 EcFonts.WAZAA_SPLASH,
                 EcFonts.SLIDE_ITEM
         });
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    // @Override
-    @Override
-    public List<Wave> getPreBootWaveList() {
-        return Collections.emptyList();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    // @Override
-    @Override
-    public List<Wave> getPostBootWaveList() {
-        return Collections.emptyList();
     }
 
 }

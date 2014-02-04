@@ -20,7 +20,6 @@ package org.jrebirth.presentation.eclipsecon.ui.slides.intro;
 import org.jrebirth.presentation.ui.base.AbstractSlideModel;
 import org.jrebirth.presentation.ui.base.SlideStep;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>IntroModel</strong>.
  * 

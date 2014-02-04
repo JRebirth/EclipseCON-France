@@ -210,8 +210,14 @@
 
 		<dependency>
 			<groupId>org.jrebirth</groupId>
+			<artifactId>preloader</artifactId>
+			<version>7.7.0-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jrebirth</groupId>
 			<artifactId>presentation</artifactId>
-			<version>0.7.4-SNAPSHOT</version>
+			<version>7.7.0-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

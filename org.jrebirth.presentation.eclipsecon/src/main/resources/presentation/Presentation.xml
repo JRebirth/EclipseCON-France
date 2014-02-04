@@ -71,7 +71,7 @@
 				<item></item>
 				<item>Powered by JRebirth Application Framework</item>
 				<item link="true">www.jrebirth.org</item>
-				<item image="images/JRebirth_Title_Mini.png"></item>
+				<item image="JRebirth_Title_Mini.png"></item>
 			</content>
 		</slide>
 
@@ -79,7 +79,7 @@
 		<slide showAnimation="FadeIn" hideAnimation="FadeOut">
 			<title>About JavaFX Architecture</title>
 			<content>
-				<item image="images/slides/archi/Architecture_JavaFX_2.png" />
+				<item image="slides/archi/Architecture_JavaFX_2.png" />
 			</content>
 		</slide>
 
@@ -184,7 +184,7 @@
 			<title>Graphic Designer</title>
 			<content>
 				<title>point of view</title>
-				<item image="images/slides/mt/MasteringTablesOverview.jpg" />
+				<item image="slides/mt/MasteringTablesOverview.jpg" />
 			</content>
 		</slide>
 
@@ -219,7 +219,7 @@
 			<content>
 				<title>Application Framework</title>
 				<item>WCS - MVC Pattern</item>
-				<item image="images/slides/jrebirth/JRebirth.png" />
+				<item image="slides/jrebirth/JRebirth.png" />
 				<item level="1">currently used with presentation module</item>
 			</content>
 		</slide>
@@ -294,7 +294,7 @@
 			<content>
 				<item>Stage, Scene and Root Node</item>
 				<item>Any visual component is a node</item>
-				<item image="images/uml/node.png" />
+				<item image="uml/node.png" />
 				<item level="1">Parent (Branches)</item>
 				<item level="1">Shape (Leaves)</item>
 				<item level="1">ImageView</item>
@@ -463,7 +463,7 @@
 
 			<content name="Wordle">
 				<title>Extensible</title>
-				<item image="images/slides/properties/Properties.png" />
+				<item image="slides/properties/Properties.png" />
 			</content>
 
 			<content name="XXXProperty">

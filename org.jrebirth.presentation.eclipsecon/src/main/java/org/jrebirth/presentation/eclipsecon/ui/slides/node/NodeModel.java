@@ -19,7 +19,6 @@ package org.jrebirth.presentation.eclipsecon.ui.slides.node;
 
 import org.jrebirth.presentation.eclipsecon.ui.slides.base.AbstractBaseModel;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>NodeModel</strong>.
  * 
