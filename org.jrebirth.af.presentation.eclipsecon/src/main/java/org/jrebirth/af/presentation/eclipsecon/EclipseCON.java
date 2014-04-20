@@ -35,7 +35,7 @@ import org.jrebirth.af.core.resource.style.StyleSheet;
 import org.jrebirth.af.core.resource.style.StyleSheetItem;
 import org.jrebirth.af.core.ui.Model;
 import org.jrebirth.af.presentation.eclipsecon.resources.EcFonts;
-import org.jrebirth.af.presentation.ui.stack.StackModel;
+import org.jrebirth.af.presentation.ui.stack.SlideStackModel;
 
 /**
  * The class <strong>EclipseCON</strong>.
@@ -63,7 +63,7 @@ public final class EclipseCON extends DefaultApplication<StackPane> {
     // @Override
     @Override
     public Class<? extends Model> getFirstModelClass() {
-        return StackModel.class;
+        return SlideStackModel.class;
     }
 
     /**
