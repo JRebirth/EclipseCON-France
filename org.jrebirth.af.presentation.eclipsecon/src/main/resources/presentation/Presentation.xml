@@ -291,7 +291,7 @@
 		
 			<title>Graphical Tree</title>
 
-			<content>
+			<content name="Text">
 				<item>Stage, Scene and Root Node</item>
 				<item>Any visual component is a node</item>
 				<item image="uml/node.png" />
@@ -342,7 +342,7 @@
 		<!-- Properties -->
 		<slide modelClass="org.jrebirth.af.presentation.eclipsecon.ui.slides.property.PropertyModel" showAnimation="ScaleFromMax" hideAnimation="MoveToTop">
 			<title>Observable And Binding</title>
-			<content>
+			<content name="Text">
 				<title>Collection</title>
 				<item>Listen Collections update</item>
 				<item level="1">ObservableList</item>
@@ -563,7 +563,7 @@
 		<!-- Handler -->
 		<slide modelClass="org.jrebirth.af.presentation.eclipsecon.ui.slides.handler.HandlerModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<title>EventHandler &amp; EventFilter</title>
-			<content>
+			<content name="Text">
 				<item>Capturing Phase</item>
 				<item level="1">From Stage to trigger node</item>
 				<item level="1">Caught with addEventFilters()</item>
@@ -609,7 +609,7 @@
 		<!-- Effets -->
 		<slide modelClass="org.jrebirth.af.presentation.eclipsecon.ui.slides.effect.EffectModel" showAnimation="ScaleFromMax" hideAnimation="ScaleToMin">
 			<title>Effects</title>
-			<content>
+			<content name="Text">
 				<item>node.setEffect(effect)</item>
 				<item>Effects can be chained</item>
 				<item level="1">effect.setInput(effect)</item>
@@ -632,7 +632,7 @@
 		<!-- Transition -->
 		<slide modelClass="org.jrebirth.af.presentation.eclipsecon.ui.slides.animation.AnimationModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<title>Animations</title>
-			<content>
+			<content name="Text">
 				<item>Grouped</item>
 				<item level="1">ParallelTransition</item>
 				<item level="1">SequentialTransition</item>

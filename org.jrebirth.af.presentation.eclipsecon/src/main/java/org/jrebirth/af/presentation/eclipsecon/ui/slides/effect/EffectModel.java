@@ -87,7 +87,7 @@ public final class EffectModel extends AbstractBaseModel<EffectModel, EffectView
             case DisplacementMap:
                 getView().showDisplacementMap();
                 break;
-
+            case Text:
             default:
                 getView().showSlideStep(slideStep);
         }

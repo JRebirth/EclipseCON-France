@@ -40,9 +40,9 @@ public final class NodeModel extends AbstractBaseModel<NodeModel, NodeView, Node
     @Override
     public void showSlideStep(final NodeSlideStep slideStep) {
         switch (slideStep) {
-            case Bounds1:
-                getView().showBounds1();
-                break;
+        // case Bounds1:
+        // getView().showBounds1();
+        // break;
             default:
                 getView().showSlideStep(slideStep);
         }

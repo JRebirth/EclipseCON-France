@@ -19,7 +19,6 @@ package org.jrebirth.af.presentation.eclipsecon.ui.slides.node;
 
 import org.jrebirth.af.presentation.ui.base.SlideStep;
 
-// TODO: Auto-generated Javadoc
 /**
  * The class <strong>NodeSlideStep</strong>.
  * 
@@ -32,9 +31,6 @@ public enum NodeSlideStep implements SlideStep {
 
     /** The Stateful. */
     Stateful,
-
-    /** The Bounds1. */
-    Bounds1,
 
     /** The Extra. */
     Extra;
