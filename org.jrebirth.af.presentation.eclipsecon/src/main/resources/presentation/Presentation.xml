@@ -981,7 +981,7 @@
 
 		<slide modelClass="org.jrebirth.af.presentation.ui.image.ImageSlideModel" showAnimation="ScaleFromMax" hideAnimation="FadeOut">
 			<content>
-				<item image="images/splash/Thanks.png" />
+				<item image="splash/Thanks.png" />
 			</content>
 		</slide>
 
@@ -990,7 +990,7 @@
 
 		<slide modelClass="org.jrebirth.af.presentation.ui.image.ImageSlideModel" showAnimation="FadeIn" hideAnimation="FadeOut">
 			<content>
-				<item image="images/splash/Q_and_A.png" />
+				<item image="splash/Q_and_A.png" />
 			</content>
 		</slide>
 
