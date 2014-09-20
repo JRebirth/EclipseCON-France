@@ -19,7 +19,7 @@ package org.jrebirth.af.presentation.eclipsecon.resources;
 
 import org.jrebirth.af.core.resource.image.ImageExtension;
 import org.jrebirth.af.core.resource.image.ImageItem;
-import org.jrebirth.af.core.resource.image.LocalImage;
+import org.jrebirth.af.core.resource.image.RelImage;
 
 import static org.jrebirth.af.core.resource.Resources.create;
 
@@ -31,20 +31,20 @@ import static org.jrebirth.af.core.resource.Resources.create;
  */
 public interface EcImages {
 
-    ImageItem ECLIPSECON_LOGO = create(new LocalImage("base", "Logo_EclipseCON", ImageExtension.PNG));
+    ImageItem ECLIPSECON_LOGO = create(new RelImage("base", "Logo_EclipseCON", ImageExtension.PNG));
 
-    ImageItem JREBIRTH_LOGO = create(new LocalImage("base", "Logo_JRebirth", ImageExtension.PNG));
+    ImageItem JREBIRTH_LOGO = create(new RelImage("base", "Logo_JRebirth", ImageExtension.PNG));
 
-    ImageItem HEADER_PATTERN = create(new LocalImage("base", "Header_Pattern", ImageExtension.PNG));
+    ImageItem HEADER_PATTERN = create(new RelImage("base", "Header_Pattern", ImageExtension.PNG));
 
-    ImageItem PAGE_3_PETALS = create(new LocalImage("base", "Page_3_Petals", ImageExtension.PNG));
-    ImageItem PAGE_1_PETAL = create(new LocalImage("base", "Page_1_Petal", ImageExtension.PNG));
-    ImageItem PAGE_SPARK = create(new LocalImage("base", "Page_Spark", ImageExtension.PNG));
-    ImageItem PAGE_RAYS = create(new LocalImage("base", "Page_Rays", ImageExtension.PNG));
+    ImageItem PAGE_3_PETALS = create(new RelImage("base", "Page_3_Petals", ImageExtension.PNG));
+    ImageItem PAGE_1_PETAL = create(new RelImage("base", "Page_1_Petal", ImageExtension.PNG));
+    ImageItem PAGE_SPARK = create(new RelImage("base", "Page_Spark", ImageExtension.PNG));
+    ImageItem PAGE_RAYS = create(new RelImage("base", "Page_Rays", ImageExtension.PNG));
 
-    ImageItem CUSTOM_CAR = create(new LocalImage("slides/fx", "Custom_Car", ImageExtension.JPG));
-    ImageItem TEXTURE = create(new LocalImage("slides/fx", "fabric_texture_car", ImageExtension.JPG));
+    ImageItem CUSTOM_CAR = create(new RelImage("slides/fx", "Custom_Car", ImageExtension.JPG));
+    ImageItem TEXTURE = create(new RelImage("slides/fx", "fabric_texture_car", ImageExtension.JPG));
 
-    ImageItem PLACE_LOGO = create(new LocalImage("PlaceLogo", ImageExtension.JPG));
+    ImageItem PLACE_LOGO = create(new RelImage("PlaceLogo", ImageExtension.JPG));
 
 }
