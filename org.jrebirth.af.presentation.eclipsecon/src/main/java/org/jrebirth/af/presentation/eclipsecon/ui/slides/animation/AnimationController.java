@@ -17,7 +17,7 @@
  */
 package org.jrebirth.af.presentation.eclipsecon.ui.slides.animation;
 
-import org.jrebirth.af.core.exception.CoreException;
+import org.jrebirth.af.api.exception.CoreException;
 import org.jrebirth.af.presentation.eclipsecon.ui.slides.base.AbstractBaseController;
 
 /**

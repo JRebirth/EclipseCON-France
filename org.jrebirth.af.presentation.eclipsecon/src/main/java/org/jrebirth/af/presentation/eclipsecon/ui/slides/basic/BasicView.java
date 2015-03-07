@@ -19,8 +19,8 @@ package org.jrebirth.af.presentation.eclipsecon.ui.slides.basic;
 
 import javafx.scene.layout.Pane;
 
-import org.jrebirth.af.core.exception.CoreException;
-import org.jrebirth.af.core.ui.annotation.RootNodeId;
+import org.jrebirth.af.api.exception.CoreException;
+import org.jrebirth.af.api.ui.annotation.RootNodeId;
 import org.jrebirth.af.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
 
 /**
