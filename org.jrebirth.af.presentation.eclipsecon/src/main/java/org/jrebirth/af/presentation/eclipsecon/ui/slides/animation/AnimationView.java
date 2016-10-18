@@ -69,7 +69,7 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     @Override
     protected Node getContentPanel() {
-        return buildDefaultContent(getModel().getDefaultContent());
+        return buildDefaultContent(model().getDefaultContent());
     }
 
     /**
@@ -79,7 +79,7 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     public void buildDemoRectangle(final AnimationSlideStep slideStep) {
 
-        final VBox vb = buildDefaultContent(getModel().getContent(slideStep));
+        final VBox vb = buildDefaultContent(model().getContent(slideStep));
 
         this.demoRectangle = RectangleBuilder.create()
                 .width(200)

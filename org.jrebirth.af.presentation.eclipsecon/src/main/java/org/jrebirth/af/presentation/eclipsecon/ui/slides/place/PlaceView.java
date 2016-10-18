@@ -58,9 +58,9 @@ public final class PlaceView extends AbstractSlideView<PlaceModel, Pane, PlaceCo
                 // .fitWidth(Double.MAX_VALUE)
                 .build();
 
-        getRootNode().getChildren().add(toulouse);
+        node().getChildren().add(toulouse);
 
-        getRootNode().getStyleClass().add(getModel().getSlide().getStyle());
+        node().getStyleClass().add(model().getSlide().getStyle());
     }
 
 }

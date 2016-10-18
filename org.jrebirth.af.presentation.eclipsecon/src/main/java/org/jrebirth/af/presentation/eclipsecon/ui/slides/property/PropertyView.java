@@ -67,7 +67,7 @@ public final class PropertyView extends AbstractBaseView<PropertyModel, Pane, Pr
      */
     @Override
     protected Node getContentPanel() {
-        return buildDefaultContent(getModel().getDefaultContent());
+        return buildDefaultContent(model().getDefaultContent());
     }
 
     /**
@@ -75,7 +75,7 @@ public final class PropertyView extends AbstractBaseView<PropertyModel, Pane, Pr
      */
     public void showBinding() {
 
-        final VBox vb = buildDefaultContent(getModel().getContent(PropertySlideStep.Binding));
+        final VBox vb = buildDefaultContent(model().getContent(PropertySlideStep.Binding));
 
         final NumberFormat nf = new DecimalFormat("0.0");
         final Circle c = CircleBuilder.create().fill(EcColors.SHAPE_BLUE.get()).radius(50).build();

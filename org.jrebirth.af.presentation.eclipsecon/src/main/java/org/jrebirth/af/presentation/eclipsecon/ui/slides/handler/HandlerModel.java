@@ -43,13 +43,13 @@ public final class HandlerModel extends AbstractBaseModel<HandlerModel, HandlerV
         switch (slideStep) {
 
             case Text:
-                getView().showText();
+                view().showText();
                 break;
             case HandlerStage:
-                getView().showHandlerStage();
+                view().showHandlerStage();
                 break;
             default:
-                getView().showSlideStep(slideStep);
+                view().showSlideStep(slideStep);
         }
     }
 }

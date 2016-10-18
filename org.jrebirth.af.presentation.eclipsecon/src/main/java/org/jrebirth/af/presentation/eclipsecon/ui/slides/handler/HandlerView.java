@@ -194,7 +194,7 @@ public final class HandlerView extends AbstractBaseView<HandlerModel, Pane, Hand
     public void showText() {
         this.stage.close();
 
-        showCustomSlideStep(buildDefaultContent(getModel().getDefaultContent()));
+        showCustomSlideStep(buildDefaultContent(model().getDefaultContent()));
     }
 
     /**

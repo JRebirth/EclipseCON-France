@@ -63,7 +63,7 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
      */
     @Override
     protected Node getContentPanel() {
-        return buildDefaultContent(getModel().getDefaultContent());
+        return buildDefaultContent(model().getDefaultContent());
     }
 
     /**

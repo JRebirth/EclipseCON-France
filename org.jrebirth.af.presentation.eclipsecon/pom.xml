@@ -4,24 +4,25 @@
 	<parent>
 		<groupId>org.jrebirth</groupId>
 		<artifactId>ria</artifactId>
-		<version>2.0.0</version>
+		<version>3.0.0</version>
 	</parent>
 	
 	<groupId>org.jrebirth.af.presentation</groupId>
 	<artifactId>eclipsecon</artifactId>
-	<version>2.0.0</version>
+	<version>3.0.0</version>
 
 	<name>EclipseCON France 2013 - JavaFX Workshop support Slides</name>
 	<url>http://www.jrebirth.org/eclipsecon</url>
 	<description>EclipseCON France 2013 - JavaFX Workshop support Slides</description>
 
 	<properties>
+	
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<deployUrl>http://apps.jrebirth.org</deployUrl>
-		<deployPath>${project.artifactId}/${project.version}</deployPath>
+		<jrebirth.version>8.5.0</jrebirth.version>
 
-		<jnlpFilename>EclipseCON.jnlp</jnlpFilename>
+		<archiveName>EclipseCON</archiveName>
+		<exeIcon>src/main/resources/images/JRebirth.ico</exeIcon>
 		<appClass>org.jrebirth.af.presentation.eclipsecon.EclipseCON</appClass>
 
 		<appletWidth>1024</appletWidth>
@@ -36,15 +37,6 @@
 		<developerConnection>scm:git:ssh://git@github.com/JRebirth/EclipseCON-France.git</developerConnection>
 		<url>https://github.com/JRebirth/EclipseCON-France</url>
 	</scm>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>webstart-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 	<dependencies>
 
@@ -63,19 +55,19 @@
 		<dependency>
 			<groupId>org.jrebirth.af</groupId>
 			<artifactId>preloader</artifactId>
-			<version>8.0.1</version>
+			<version>${jrebirth.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.jrebirth.af</groupId>
 			<artifactId>presentation</artifactId>
-			<version>8.0.1</version>
+			<version>${jrebirth.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.1.2</version>
+			<version>1.1.5</version>
 		</dependency>
 
 	</dependencies>

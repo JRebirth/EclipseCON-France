@@ -41,10 +41,10 @@ public final class NodeModel extends AbstractBaseModel<NodeModel, NodeView, Node
     public void showSlideStep(final NodeSlideStep slideStep) {
         switch (slideStep) {
         // case Bounds1:
-        // getView().showBounds1();
+        // view().showBounds1();
         // break;
             default:
-                getView().showSlideStep(slideStep);
+                view().showSlideStep(slideStep);
         }
 
     }
