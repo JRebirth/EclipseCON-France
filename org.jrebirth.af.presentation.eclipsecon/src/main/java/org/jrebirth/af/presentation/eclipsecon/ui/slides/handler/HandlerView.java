@@ -21,19 +21,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.SceneBuilder;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBuilder;
-import javafx.scene.control.LabelBuilder;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextAreaBuilder;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.BorderPaneBuilder;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.PaneBuilder;
 import javafx.stage.Stage;
-import javafx.stage.StageBuilder;
 import javafx.stage.StageStyle;
+import javafx.scene.control.Label;
 
 import org.jrebirth.af.api.exception.CoreException;
 import org.jrebirth.af.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
@@ -84,25 +78,23 @@ public final class HandlerView extends AbstractBaseView<HandlerModel, Pane, Hand
     protected void initView() {
         super.initView();
 
-        this.top = LabelBuilder.create()
-                .text("Top Label")
-                .style("-fx-background-color: #CCCCCC;-fx-font-size:1.4em;-fx-label-padding:20px")
-                .build();
-        this.center = TextAreaBuilder.create()
-                .text("")
-                .minWidth(600)
-                .style("-fx-font-size:1.4em")
-                .build();
-        this.button = ButtonBuilder.create()
-                .text("Erase")
-                .style("-fx-background-color: #CCCCCC;-fx-font-size:1.4em;-fx-label-padding:20px")
-                .build();
+        final Label _b6 = new Label("Top Label");
+        _b6.setStyle("-fx-background-color: #CCCCCC;-fx-font-size:1.4em;-fx-label-padding:20px");
+        this.top = _b6;
+        final TextArea _b3 = new TextArea();
+        _b3.setText("");
+        _b3.setMinWidth(600);
+        _b3.setStyle("-fx-font-size:1.4em");
+        this.center = _b3;
+        final Button _b5 = new Button("Erase");
+        _b5.setStyle("-fx-background-color: #CCCCCC;-fx-font-size:1.4em;-fx-label-padding:20px");
+        this.button = _b5;
 
-        this.borderPane = BorderPaneBuilder.create()
-                .top(this.top)
-                .center(this.center)
-                .bottom(this.button)
-                .build();
+        final BorderPane _b4 = new BorderPane();
+        _b4.setTop(this.top);
+        _b4.setCenter(this.center);
+        _b4.setBottom(this.button);
+        this.borderPane = _b4;
 
         BorderPane.setAlignment(this.top, Pos.CENTER);
         BorderPane.setAlignment(this.center, Pos.CENTER);
@@ -112,18 +104,16 @@ public final class HandlerView extends AbstractBaseView<HandlerModel, Pane, Hand
         BorderPane.setMargin(this.center, new Insets(0));
         BorderPane.setMargin(this.button, new Insets(0));
 
-        this.scene = SceneBuilder.create()
-                .root(this.borderPane)
-                .build();
+        this.scene = new Scene(this.borderPane);
 
-        this.stage = StageBuilder.create()
-                .height(700)
-                .width(980)
-                .resizable(true)
-                .focused(true)
-                .title("Event Filtering and Handling Demo")
-                .style(StageStyle.DECORATED)
-                .scene(this.scene).build();
+        final Stage _b7 = new Stage();
+        _b7.setHeight(700);
+        _b7.setWidth(980);
+        _b7.setResizable(true);
+        _b7.setTitle("Event Filtering and Handling Demo");
+        _b7.initStyle(StageStyle.DECORATED);
+        _b7.setScene(this.scene);
+        this.stage = _b7;
     }
 
     /**
@@ -185,7 +175,8 @@ public final class HandlerView extends AbstractBaseView<HandlerModel, Pane, Hand
      */
     @Override
     protected Node getContentPanel() {
-        return PaneBuilder.create().build();
+        final Pane _b1 = new Pane();
+        return _b1;
     }
 
     /**

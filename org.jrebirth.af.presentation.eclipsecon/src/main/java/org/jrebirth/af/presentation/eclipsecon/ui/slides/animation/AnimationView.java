@@ -18,25 +18,24 @@
 package org.jrebirth.af.presentation.eclipsecon.ui.slides.animation;
 
 import javafx.animation.Animation;
-import javafx.animation.FadeTransitionBuilder;
-import javafx.animation.FillTransitionBuilder;
 import javafx.animation.Interpolator;
-import javafx.animation.PathTransitionBuilder;
-import javafx.animation.PauseTransitionBuilder;
-import javafx.animation.RotateTransitionBuilder;
-import javafx.animation.ScaleTransitionBuilder;
-import javafx.animation.SequentialTransitionBuilder;
-import javafx.animation.StrokeTransitionBuilder;
-import javafx.animation.TranslateTransitionBuilder;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.RectangleBuilder;
-import javafx.scene.shape.SVGPathBuilder;
 import javafx.util.Duration;
+import javafx.scene.shape.SVGPath;
+import javafx.animation.TranslateTransition;
+import javafx.animation.StrokeTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.ScaleTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.PathTransition;
+import javafx.animation.FillTransition;
+import javafx.animation.FadeTransition;
 
 import org.jrebirth.af.api.exception.CoreException;
 import org.jrebirth.af.presentation.eclipsecon.resources.EcColors;
@@ -81,12 +80,12 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
 
         final VBox vb = buildDefaultContent(model().getContent(slideStep));
 
-        this.demoRectangle = RectangleBuilder.create()
-                .width(200)
-                .height(200)
-                .strokeWidth(10)
-                .fill(EcColors.GRADIENT_3.get())
-                .build();
+        final Rectangle _b3 = new Rectangle();
+        _b3.setWidth(200);
+        _b3.setHeight(200);
+        _b3.setStrokeWidth(10);
+        _b3.setFill(EcColors.GRADIENT_3.get());
+        this.demoRectangle = _b3;
         vb.getChildren().add(0, this.demoRectangle);
         StackPane.setAlignment(this.demoRectangle, Pos.TOP_CENTER);
 
@@ -98,30 +97,30 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     public void showFade() {
 
-        FadeTransitionBuilder.create()
-                .node(this.demoRectangle)
-                .fromValue(0.0)
-                .toValue(1.0)
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final FadeTransition _b4 = new FadeTransition();
+        _b4.setNode(this.demoRectangle);
+        _b4.setFromValue(0.0);
+        _b4.setToValue(1.0);
+        _b4.setAutoReverse(true);
+        _b4.setCycleCount(Animation.INDEFINITE);
+        _b4.setInterpolator(Interpolator.EASE_IN);
+        _b4.setDuration(Duration.seconds(1));
+        _b4.play();
     }
 
     /**
      * TODO To complete.
      */
     public void showFill() {
-        FillTransitionBuilder.create()
-                .shape(this.demoRectangle)
-                .fromValue(EcColors.GRADIENT_1.get())
-                .toValue(EcColors.GRADIENT_2.get())
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final FillTransition _b7 = new FillTransition();
+        _b7.setShape(this.demoRectangle);
+        _b7.setFromValue(EcColors.GRADIENT_1.get());
+        _b7.setToValue(EcColors.GRADIENT_2.get());
+        _b7.setAutoReverse(true);
+        _b7.setCycleCount(Animation.INDEFINITE);
+        _b7.setInterpolator(Interpolator.EASE_IN);
+        _b7.setDuration(Duration.seconds(1));
+        _b7.play();
 
     }
 
@@ -130,14 +129,16 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     public void showPath() {
         final String path = "M0 230.717C0 230.717 206.085 48.7446 313.587 86.8569 421.089 124.969 407.816 319.824 506.692 298.352 605.567 276.881 704.442 -39.8258 800 4.19133";
-        PathTransitionBuilder.create()
-                .node(this.demoRectangle)
-                .path(SVGPathBuilder.create().content(path).build())
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final SVGPath svgPath = new SVGPath();
+        svgPath.setContent(path);
+        final PathTransition pathTransition = new PathTransition();
+        pathTransition.setNode(this.demoRectangle);
+        pathTransition.setPath(svgPath);
+        pathTransition.setAutoReverse(true);
+        pathTransition.setCycleCount(Animation.INDEFINITE);
+        pathTransition.setInterpolator(Interpolator.EASE_IN);
+        pathTransition.setDuration(Duration.seconds(1));
+        pathTransition.play();
 
     }
 
@@ -146,34 +147,36 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     public void showPause() {
 
-        SequentialTransitionBuilder.create()
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .children(
-                        RotateTransitionBuilder.create()
-                                .node(this.demoRectangle)
-                                .fromAngle(0)
-                                .toAngle(180)
-                                .interpolator(Interpolator.EASE_IN)
-                                .duration(Duration.millis(400))
-                                .build(),
-                        PauseTransitionBuilder.create().duration(Duration.millis(600)).build())
-                .build().play();
+        final RotateTransition rotate = new RotateTransition();
+        rotate.setNode(this.demoRectangle);
+        rotate.setFromAngle(0);
+        rotate.setToAngle(180);
+        rotate.setInterpolator(Interpolator.EASE_IN);
+        rotate.setDuration(Duration.millis(400));
+
+        final PauseTransition pause = new PauseTransition();
+        pause.setDuration(Duration.millis(600));
+
+        final SequentialTransition sequential = new SequentialTransition();
+        sequential.setAutoReverse(true);
+        sequential.setCycleCount(Animation.INDEFINITE);
+        sequential.getChildren().addAll(rotate, pause);
+        sequential.play();
     }
 
     /**
      * TODO To complete.
      */
     public void showRotate() {
-        RotateTransitionBuilder.create()
-                .node(this.demoRectangle)
-                .autoReverse(true)
-                .fromAngle(0)
-                .toAngle(540)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final RotateTransition _b5 = new RotateTransition();
+        _b5.setNode(this.demoRectangle);
+        _b5.setAutoReverse(true);
+        _b5.setFromAngle(0);
+        _b5.setToAngle(540);
+        _b5.setCycleCount(Animation.INDEFINITE);
+        _b5.setInterpolator(Interpolator.EASE_IN);
+        _b5.setDuration(Duration.seconds(1));
+        _b5.play();
 
     }
 
@@ -181,19 +184,19 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      * TODO To complete.
      */
     public void showScale() {
-        ScaleTransitionBuilder.create()
-                .node(this.demoRectangle)
-                .fromX(1.0)
-                .byX(0.1)
-                .toX(2.0)
-                .fromY(1.0)
-                .byY(0.1)
-                .toY(2.0)
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final ScaleTransition _b10 = new ScaleTransition();
+        _b10.setNode(this.demoRectangle);
+        _b10.setFromX(1.0);
+        _b10.setByX(0.1);
+        _b10.setToX(2.0);
+        _b10.setFromY(1.0);
+        _b10.setByY(0.1);
+        _b10.setToY(2.0);
+        _b10.setAutoReverse(true);
+        _b10.setCycleCount(Animation.INDEFINITE);
+        _b10.setInterpolator(Interpolator.EASE_IN);
+        _b10.setDuration(Duration.seconds(1));
+        _b10.play();
 
     }
 
@@ -201,15 +204,15 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      * TODO To complete.
      */
     public void showStroke() {
-        StrokeTransitionBuilder.create()
-                .shape(this.demoRectangle)
-                .fromValue(EcColors.GRADIENT_1.get())
-                .toValue(EcColors.GRADIENT_2.get())
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_IN)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final StrokeTransition _b8 = new StrokeTransition();
+        _b8.setShape(this.demoRectangle);
+        _b8.setFromValue(EcColors.GRADIENT_1.get());
+        _b8.setToValue(EcColors.GRADIENT_2.get());
+        _b8.setAutoReverse(true);
+        _b8.setCycleCount(Animation.INDEFINITE);
+        _b8.setInterpolator(Interpolator.EASE_IN);
+        _b8.setDuration(Duration.seconds(1));
+        _b8.play();
     }
 
     /**
@@ -217,17 +220,17 @@ public final class AnimationView extends AbstractBaseView<AnimationModel, Pane, 
      */
     public void showTranslate() {
 
-        TranslateTransitionBuilder.create()
-                .node(this.demoRectangle)
-                .fromX(0.0)
-                .toX(400.0)
-                .fromY(0.0)
-                .toY(200)
-                .autoReverse(true)
-                .cycleCount(Animation.INDEFINITE)
-                .interpolator(Interpolator.EASE_BOTH)
-                .duration(Duration.seconds(1))
-                .build().play();
+        final TranslateTransition _b9 = new TranslateTransition();
+        _b9.setNode(this.demoRectangle);
+        _b9.setFromX(0.0);
+        _b9.setToX(400.0);
+        _b9.setFromY(0.0);
+        _b9.setToY(200);
+        _b9.setAutoReverse(true);
+        _b9.setCycleCount(Animation.INDEFINITE);
+        _b9.setInterpolator(Interpolator.EASE_BOTH);
+        _b9.setDuration(Duration.seconds(1));
+        _b9.play();
     }
 
 }

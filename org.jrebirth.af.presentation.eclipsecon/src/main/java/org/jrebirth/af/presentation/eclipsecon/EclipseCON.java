@@ -47,7 +47,7 @@ import org.jrebirth.af.presentation.ui.stack.SlideStackModel;
  */
 public final class EclipseCON extends DefaultApplication<StackPane> {
 
-    private static StyleSheetItem CSS = Resources.create(new StyleSheet("template"));
+    private static StyleSheetItem CSS = Resources.create(new StyleSheet("template")).module(EclipseCON.class.getModule());
 
     /**
      * Application launcher.

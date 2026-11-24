@@ -23,18 +23,15 @@ import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.CheckBoxBuilder;
-import javafx.scene.effect.ReflectionBuilder;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.RectangleBuilder;
 import javafx.scene.transform.Rotate;
-import javafx.scene.transform.RotateBuilder;
-import javafx.scene.transform.TranslateBuilder;
+import javafx.scene.transform.Translate;
+import javafx.scene.effect.Reflection;
 
 import org.jrebirth.af.api.exception.CoreException;
 import org.jrebirth.af.presentation.eclipsecon.ui.slides.base.AbstractBaseView;
@@ -72,14 +69,13 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
     public void showBounds1() {
         final StackPane customStackPane = new StackPane();
 
-        final Rectangle rectangle = RectangleBuilder.create()
-                .width(500)
-                .height(300)
-                .fill(Color.ANTIQUEWHITE)
-                .stroke(Color.GOLDENROD)
-                .strokeWidth(4)
-                .strokeDashArray(10.0, 5.0, 2.0)
-                .build();
+        final Rectangle rectangle = new Rectangle();
+        rectangle.setWidth(500);
+        rectangle.setHeight(300);
+        rectangle.setFill(Color.ANTIQUEWHITE);
+        rectangle.setStroke(Color.GOLDENROD);
+        rectangle.setStrokeWidth(4);
+        rectangle.getStrokeDashArray().setAll(10.0, 5.0, 2.0);
 
         final Rectangle local = buildRectangle(rectangle.getBoundsInLocal(), Color.DODGERBLUE, 2.0, 10.0);
         final Rectangle parent = buildRectangle(rectangle.getBoundsInParent(), Color.DARKGRAY, 2.0, 15.0);
@@ -111,20 +107,31 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
 
         final VBox vb = new VBox();
 
-        final CheckBox cb1 = CheckBoxBuilder.create().text("BoundsInLocal").build();
-        final CheckBox cb2 = CheckBoxBuilder.create().text("BoundsInParent").build();
-        final CheckBox cb3 = CheckBoxBuilder.create().text("LayoutBounds").build();
+        final CheckBox cb1 = new CheckBox();
+        cb1.setText("BoundsInLocal");;
+        final CheckBox cb2 = new CheckBox();
+        cb2.setText("BoundsInParent");;
+        final CheckBox cb3 = new CheckBox();
+        cb3.setText("LayoutBounds");;
 
-        final CheckBox cb4 = CheckBoxBuilder.create().text("Effect").build();
-        final CheckBox cb5 = CheckBoxBuilder.create().text("Rotate").build();
-        final CheckBox cb6 = CheckBoxBuilder.create().text("Rotate and Translate").build();
+        final CheckBox cb4 = new CheckBox();
+        cb4.setText("Effect");;
+        final CheckBox cb5 = new CheckBox();
+        cb5.setText("Rotate");;
+        final CheckBox cb6 = new CheckBox();
+        cb6.setText("Rotate and Translate");;
 
         cb4.selectedProperty().addListener(new ChangeListener<Boolean>() {
 
             @Override
             public void changed(final ObservableValue<? extends Boolean> arg0, final Boolean arg1, final Boolean update) {
                 if (update) {
-                    rectangle.setEffect(ReflectionBuilder.create().fraction(0.4).topOpacity(0.8).bottomOpacity(0.3).topOffset(10.0).build());
+                    final Reflection _b10 = new Reflection();
+                    _b10.setFraction(0.4);
+                    _b10.setTopOpacity(0.8);
+                    _b10.setBottomOpacity(0.3);
+                    _b10.setTopOffset(10.0);
+                    rectangle.setEffect(_b10);
                 } else {
                     rectangle.setEffect(null);
                 }
@@ -137,7 +144,8 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
             @Override
             public void changed(final ObservableValue<? extends Boolean> arg0, final Boolean arg1, final Boolean update) {
                 if (update) {
-                    final Rotate rotate = RotateBuilder.create().angle(30.0).build();
+                    final Rotate rotate = new Rotate();
+                    rotate.setAngle(30.0);;
                     rectangle.getTransforms().add(rotate);
                 } else {
                     rectangle.getTransforms().clear();
@@ -151,8 +159,13 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
             @Override
             public void changed(final ObservableValue<? extends Boolean> arg0, final Boolean arg1, final Boolean update) {
                 if (update) {
-                    rectangle.getTransforms().add(RotateBuilder.create().angle(30.0).build());
-                    rectangle.getTransforms().add(TranslateBuilder.create().x(40).y(-147).build());
+                    final Rotate _b2 = new Rotate();
+                    _b2.setAngle(30.0);
+                    rectangle.getTransforms().add(_b2);
+                    final Translate _b5 = new Translate();
+                    _b5.setX(40);
+                    _b5.setY(-147);
+                    rectangle.getTransforms().add(_b5);
                 } else {
                     rectangle.getTransforms().clear();
                 }
@@ -186,16 +199,15 @@ public final class NodeView extends AbstractBaseView<NodeModel, Pane, NodeContro
      */
     private Rectangle buildRectangle(final Bounds bounds, final Color stroke, final Double... dash) {
 
-        final Rectangle r = RectangleBuilder.create()
-                .x(bounds.getMaxX())
-                .y(bounds.getMaxY())
-                .width(bounds.getWidth())
-                .height(bounds.getHeight())
-                .fill(null)
-                .stroke(stroke)
-                .strokeWidth(4.0)
-                .strokeDashArray(dash)
-                .build();
+        final Rectangle r = new Rectangle();
+        r.setX(bounds.getMaxX());
+        r.setY(bounds.getMaxY());
+        r.setWidth(bounds.getWidth());
+        r.setHeight(bounds.getHeight());
+        r.setFill(null);
+        r.setStroke(stroke);
+        r.setStrokeWidth(4.0);
+        r.getStrokeDashArray().setAll(dash);
 
         return r;
     }
